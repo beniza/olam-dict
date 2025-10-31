@@ -1,0 +1,1559 @@
+{
+  "project": {
+    "name": "Olam 2.0 - Malayalam Dictionary Platform Redesign",
+    "version": "2.0.0",
+    "description": "Complete reimagination of the Olam Malayalam-English dictionary platform with modern design, authentic Malayalam content, multi-source lexicographic data, and advanced linguistic features",
+    "objective": "Create a comprehensive, user-friendly, and linguistically sophisticated Malayalam dictionary interface that prioritizes search functionality, presents multi-source dictionary data, and provides educational scaffolding for learners"
+  },
+  
+  "designPhilosophy": {
+    "core_principles": [
+      "Search-first architecture: The search functionality must be the most prominent element on the page",
+      "Authentic Malayalam content: All user-facing content, examples, and VisuWords must be in Malayalam script",
+      "Multi-source aggregation: Present entries from multiple dictionaries (Gundert, Sabdatharavali, Bailey, Datuk, WordNet) with clear attribution",
+      "Educational scaffolding: Help users understand morphology, etymology, spelling correctness, and semantic relationships",
+      "Modern glassmorphism aesthetic: Use soft gradients, frosted glass effects, and layered depth",
+      "Accessibility and responsiveness: Mobile-first design with clear typography and color-coded information hierarchy"
+    ],
+    "visual_language": {
+      "style": "Modern glassmorphism with soft gradients and floating card designs",
+      "color_psychology": {
+        "indigo_blue": "Primary accent for trust and professionalism (dictionary sources, main CTAs)",
+        "teal_green": "Secondary accent for morphological information and linguistic features",
+        "orange_coral": "Warm accent for community and engagement features",
+        "green": "Success and correctness indicators (correct spellings)",
+        "red": "Error and warning indicators (incorrect spellings)"
+      },
+      "typography_hierarchy": {
+        "malayalam_script": "RaghuMalayalamSans for optimal Malayalam readability",
+        "headings": "Playfair Display for elegant serif hierarchy",
+        "body": "DM Sans for clean sans-serif readability",
+        "monospace": "JetBrains Mono for IPA transcriptions and technical content"
+      }
+    }
+  },
+
+  "user_journey_requirements": [
+    {
+      "requirement": "Immediate search access",
+      "rationale": "Users come to a dictionary to search for words—this should be the first and most prominent feature",
+      "implementation": "Full-width gradient hero section at the top with large search input, mode toggles, and search button before any other content"
+    },
+    {
+      "requirement": "Multi-dictionary comprehensiveness",
+      "rationale": "Different dictionaries provide different perspectives—show all available sources with clear attribution",
+      "implementation": "Separate cards for each dictionary source (Gundert, STV, Bailey, Datuk, WordNet) with independent sense numbering"
+    },
+    {
+      "requirement": "Linguistic education",
+      "rationale": "Users benefit from understanding word structure, origins, and relationships",
+      "implementation": "Morphology alerts for inflected forms, etymology sections with Sanskrit/PIE roots, semantic relation networks"
+    },
+    {
+      "requirement": "Spelling guidance",
+      "rationale": "Malayalam orthography can be complex—help users learn correct forms",
+      "implementation": "Spelling corrections section showing correct vs incorrect forms with explanations; similar spellings section for discovery"
+    },
+    {
+      "requirement": "Visual semantic exploration",
+      "rationale": "Understanding word relationships aids vocabulary building",
+      "implementation": "VisuWords graph with Malayalam nodes showing synonyms, antonyms, hypernyms with visual connections"
+    }
+  ],
+
+  "technical_specifications": {
+    "html_structure": {
+      "doctype": "HTML5",
+      "language": "ml (Malayalam primary), en (English secondary)",
+      "semantic_elements": "header, nav, main, section, article, aside, footer",
+      "accessibility_features": [
+        "ARIA labels for interactive elements",
+        "lang attributes for language switching",
+        "semantic heading hierarchy (h1 → h2 → h3)",
+        "focus states for keyboard navigation"
+      ]
+    },
+    
+    "css_architecture": {
+      "methodology": "Custom properties (CSS variables) with utility-first component patterns",
+      "responsive_strategy": "Mobile-first with clamp() for fluid typography and spacing",
+      "breakpoints": {
+        "mobile": "< 640px",
+        "tablet": "640px - 820px",
+        "desktop": "> 820px"
+      },
+      "custom_properties": {
+        "--bg-gradient": "radial-gradient(circle at 15% 10%, #f7faff, #edf3ff 35%, #e6ecff 65%, #dee5ff 100%)",
+        "--pane": "rgba(255, 255, 255, 0.82)",
+        "--pane-strong": "rgba(255, 255, 255, 0.92)",
+        "--accent": "#3c5dff (indigo blue)",
+        "--accent-soft": "rgba(60, 93, 255, 0.1)",
+        "--accent-warm": "#ff7a6b (coral orange)",
+        "--accent-teal": "#00a7a7 (teal green)",
+        "--text-primary": "#1e2a3d (deep navy)",
+        "--text-secondary": "#4c5f73 (slate gray)",
+        "--shadow": "0 32px 80px rgba(28, 46, 94, 0.18)",
+        "--font-body": "RaghuMalayalamSans, DM Sans, Segoe UI, sans-serif",
+        "--font-heading": "Playfair Display, Times New Roman, serif",
+        "--font-mal": "RaghuMalayalamSans, RaghuMalayalam, Noto Serif Malayalam, Kartika, sans-serif"
+      },
+      "design_tokens": {
+        "border_radius": {
+          "small": "18px - 20px (panels, cards)",
+          "medium": "22px - 26px (feature sections)",
+          "large": "28px - 40px (hero containers)"
+        },
+        "spacing_scale": "clamp() functions for fluid spacing between 1.5rem - 3rem",
+        "shadow_layers": "Multiple depths from 0 18px 36px to 0 32px 80px for hierarchy"
+      }
+    },
+
+    "font_stack": {
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap",
+        "https://smc.org.in/fonts/raghumalayalamsans.css"
+      ],
+      "fallback_hierarchy": {
+        "malayalam": "RaghuMalayalamSans → RaghuMalayalam → Noto Serif Malayalam → Kartika → sans-serif",
+        "latin_headings": "Playfair Display → Times New Roman → serif",
+        "latin_body": "DM Sans → Segoe UI → sans-serif",
+        "monospace": "JetBrains Mono → Fira Mono → monospace"
+      }
+    }
+  },
+
+  "page_sections": {
+    "1_header_navigation": {
+      "position": "sticky top with backdrop blur",
+      "elements": [
+        "Logo/Brand: 'Olam ഓലം' with Malayalam script",
+        "Navigation links: Dictionaries, Tools, About, Contribute",
+        "Underline hover animation on nav links"
+      ],
+      "styling": {
+        "background": "rgba(243, 246, 255, 0.85) with backdrop-filter: blur(16px)",
+        "border": "1px solid rgba(255, 255, 255, 0.6)",
+        "shadow": "0 8px 24px rgba(36, 55, 112, 0.1)"
+      }
+    },
+
+    "2_search_hero": {
+      "priority": "MUST BE FIRST SECTION - This is the primary user entry point",
+      "layout": "Full-width prominent section with gradient background",
+      "components": [
+        {
+          "component": "Search container",
+          "elements": [
+            "Large search input with label 'SEARCH'",
+            "Prominent 'Search' button with gradient background",
+            "Focus ring on :focus-within for accessibility"
+          ],
+          "styling": {
+            "background": "linear-gradient(165deg, #6366f1 0%, #14b8a6 100%)",
+            "padding": "clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 3rem)",
+            "search_input": {
+              "font_size": "1.25rem - 1.5rem",
+              "padding": "1.25rem 1.5rem",
+              "background": "white with rgba(255, 255, 255, 0.92)",
+              "border_radius": "999px (pill shape)",
+              "box_shadow": "0 16px 40px rgba(36, 64, 178, 0.25)"
+            }
+          }
+        },
+        {
+          "component": "Mode toggles",
+          "options": [
+            "Dictionary (default)",
+            "Translate",
+            "Spell Check",
+            "Audio"
+          ],
+          "styling": "Glass-morphic buttons with rgba backgrounds, active state indication"
+        },
+        {
+          "component": "Branding elements",
+          "elements": [
+            "Floating 'ഓലം' logo in Malayalam",
+            "Badges: 'Open Source', 'Community Driven', '180K+ entries'"
+          ]
+        }
+      ],
+      "user_experience": "Immediately draws attention, provides clear affordance for primary action (search), offers mode selection without overwhelming"
+    },
+
+    "3_mission_hero": {
+      "purpose": "Communicate platform value proposition after search",
+      "layout": "Two-column grid (copy + visual) with glassmorphism cards",
+      "content": {
+        "heading": "A living dictionary വാക്കുകളുടെ സമുദ്രം",
+        "subheading": "ഓലം - കേരളത്തിന്റെ സ്വതന്ത്ര സഹകരണ നിഘണ്ടു",
+        "description": "Paragraph explaining open-source Malayalam lexicography mission",
+        "visual_stats": [
+          "180,000+ entries across 5 sources",
+          "Community-verified definitions",
+          "Historical + modern usage"
+        ]
+      },
+      "styling": {
+        "background": "Layered glassmorphism with double ::before and ::after pseudo-elements",
+        "gradients": "radial-gradient overlays with indigo and teal accents",
+        "shadow": "var(--shadow) for depth"
+      }
+    },
+
+    "4_search_modes_features": {
+      "purpose": "Showcase different search capabilities",
+      "layout": "Auto-fit grid with minmax(260px, 1fr)",
+      "cards": [
+        {
+          "title": "Dictionary Lookup",
+          "description": "Search Malayalam words with comprehensive definitions",
+          "tags": ["Malayalam → English", "English → Malayalam", "Cross-ref"]
+        },
+        {
+          "title": "Spell Check",
+          "description": "Validate Malayalam orthography with mlmorph",
+          "tags": ["Correct forms", "Common errors", "Unicode validation"]
+        },
+        {
+          "title": "Translation",
+          "description": "Context-aware translation with usage examples",
+          "tags": ["Contextual", "Idioms", "Phrases"]
+        },
+        {
+          "title": "Audio Pronunciation",
+          "description": "Native speaker recordings for proper pronunciation",
+          "tags": ["IPA transcription", "Regional variants", "Syllable stress"]
+        }
+      ],
+      "styling": "White cards with soft shadows, hover lift effects, color-coded tags by category"
+    },
+
+    "5_sample_entry_showcase": {
+      "purpose": "Demonstrate rich entry presentation with real data",
+      "sample_word": "വാക്ക് (vākk)",
+      "structure": {
+        "entry_header": {
+          "headword": "വാക്ക് in large Malayalam font (2rem - 2.6rem)",
+          "ipa": "/ʋaːkːɨ̆/ in monospace",
+          "badges": [
+            "Noun",
+            "Sanskrit origin",
+            "High frequency",
+            "CEFR A1"
+          ]
+        },
+        
+        "morphology_alert": {
+          "purpose": "Educational notification for inflected form searches",
+          "content": "⚠️ You searched for വാക്കിന് (inflected form). Showing lemma: വാക്ക്",
+          "explanation": "inflected form വാക്കിന് → base വാക്ക് (dative case marker ഇന്)",
+          "styling": {
+            "background": "rgba(20, 184, 166, 0.08) - soft teal",
+            "border_left": "4px solid #14b8a6 - teal accent",
+            "icon": "Info icon",
+            "font_size": "0.95rem"
+          },
+          "attribution": "Powered by mlmorph"
+        },
+
+        "dictionary_sources": {
+          "presentation_model": "Separate cards for each source with independent numbering",
+          "sources": [
+            {
+              "dictionary": "Gundert's Dictionary (1872)",
+              "abbreviation": "Gundert",
+              "authority": "Hermann Gundert - foundational Malayalam lexicography",
+              "senses": [
+                {
+                  "number": 1,
+                  "definition": "word, speech",
+                  "example": "നല്ല വാക്കു പറയുക (speak good words)"
+                },
+                {
+                  "number": 2,
+                  "definition": "promise, vow",
+                  "example": "വാക്കു കൊടുക്കുക (give one's word)"
+                },
+                {
+                  "number": 3,
+                  "definition": "verbal testimony, statement",
+                  "context": "legal usage"
+                }
+              ],
+              "metadata": {
+                "page": "967",
+                "scan_url": "https://dsal.uchicago.edu/..."
+              },
+              "styling": "White card with 2px colored border, hover shadow lift"
+            },
+            {
+              "dictionary": "Sabdatharavali (STV)",
+              "abbreviation": "STV",
+              "authority": "Sreekanteswaram Padmanabha Pillai - comprehensive modern dictionary",
+              "senses": [
+                {
+                  "number": 1,
+                  "definition_malayalam": "വചനം, ശബ്ദം",
+                  "definition_english": "speech, sound, word",
+                  "usage_note": "General meaning"
+                },
+                {
+                  "number": 2,
+                  "definition_malayalam": "വാഗ്ദാനം",
+                  "definition_english": "promise, commitment",
+                  "example": "വാക്കു പാലിക്കുക (keep one's word)"
+                }
+              ],
+              "styling": "Compact card variant for secondary sources"
+            },
+            {
+              "dictionary": "Bailey's Dictionary",
+              "abbreviation": "Bailey",
+              "senses": [
+                {
+                  "number": 1,
+                  "definition": "A word, speech"
+                },
+                {
+                  "number": 2,
+                  "definition": "A promise"
+                }
+              ]
+            },
+            {
+              "dictionary": "Datuk Dictionary",
+              "abbreviation": "Datuk",
+              "senses": [
+                {
+                  "number": 1,
+                  "definition": "word, saying",
+                  "compounds": ["വാക്കുകൾ (words)", "വാക്യം (sentence)"]
+                }
+              ]
+            },
+            {
+              "dictionary": "Malayalam WordNet",
+              "abbreviation": "WordNet",
+              "synset_id": "mal-0001234",
+              "semantic_data": {
+                "gloss": "a unit of language that native speakers can identify",
+                "examples": ["അവൻ നല്ല വാക്കുകൾ പറഞ്ഞു"],
+                "hypernyms": ["ഭാഷാഘടകം (language unit)"],
+                "synonyms": ["പദം", "ശബ്ദം", "വചനം"]
+              }
+            }
+          ],
+          "design_rationale": "Each dictionary is given equal visual weight with its own card. This prevents prioritization bias and allows users to compare definitions across sources. Numbered senses within each source maintain internal coherence while allowing different sources to have different numbers of senses."
+        },
+
+        "etymology_section": {
+          "purpose": "Show word origins and historical development",
+          "content": {
+            "heading": "Etymology",
+            "origin_chain": [
+              {
+                "stage": "Modern Malayalam",
+                "form": "വാക്ക്",
+                "period": "Contemporary"
+              },
+              {
+                "stage": "Sanskrit",
+                "form": "वाच् (vāc)",
+                "meaning": "speech, voice",
+                "period": "Classical"
+              },
+              {
+                "stage": "Proto-Indo-European",
+                "form": "*wekʷ-",
+                "meaning": "to speak",
+                "cognates": "Latin vox, English voice"
+              }
+            ]
+          },
+          "styling": {
+            "background": "linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08))",
+            "border": "2px solid rgba(99, 102, 241, 0.2)",
+            "layout": "Flow diagram with arrows between stages"
+          }
+        },
+
+        "semantic_relations": {
+          "purpose": "Show word connections for vocabulary building",
+          "categories": [
+            {
+              "relation_type": "Synonyms",
+              "words": [
+                {"malayalam": "പദം", "english": "word"},
+                {"malayalam": "ശബ്ദം", "english": "sound/word"},
+                {"malayalam": "വചനം", "english": "speech/utterance"},
+                {"malayalam": "ഭാഷണം", "english": "discourse"}
+              ]
+            },
+            {
+              "relation_type": "Antonyms",
+              "words": [
+                {"malayalam": "മൗനം", "english": "silence"},
+                {"malayalam": "നിശബ്ദത", "english": "quietness"}
+              ]
+            },
+            {
+              "relation_type": "Hypernyms (broader)",
+              "words": [
+                {"malayalam": "ഭാഷാഘടകം", "english": "language element"},
+                {"malayalam": "ആശയവിനിമയോപാധി", "english": "communication medium"}
+              ]
+            },
+            {
+              "relation_type": "Hyponyms (narrower)",
+              "words": [
+                {"malayalam": "നാമം", "english": "noun"},
+                {"malayalam": "ക്രിയ", "english": "verb"},
+                {"malayalam": "വിശേഷണം", "english": "adjective"}
+              ]
+            }
+          ],
+          "styling": "Grid layout with color-coded relation type headers, clickable word cards"
+        },
+
+        "spelling_corrections": {
+          "purpose": "PRESCRIPTIVE - Teach correct orthography vs common errors",
+          "correct_form": {
+            "malayalam": "വാക്ക്",
+            "transliteration": "vākk",
+            "status": "✓ Correct",
+            "styling": {
+              "background": "linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.08))",
+              "border": "2px solid #10b981 (green)",
+              "icon": "Green checkmark",
+              "font_size": "1.75rem for Malayalam word"
+            }
+          },
+          "incorrect_forms": [
+            {
+              "malayalam": "വാക്കു്",
+              "error_type": "Extra vowel sign",
+              "explanation": "വാക്ക് + ് + ു is redundant. The word ends with a geminated consonant ക്ക് followed by inherent vowel, no need for ു sign.",
+              "styling": "Red X icon, rgba(239, 68, 68, 0.08) background"
+            },
+            {
+              "malayalam": "വാക്കു",
+              "error_type": "Wrong vowel",
+              "explanation": "The final vowel should be the inherent അ (് + schwa), not ു. വാക്കു changes pronunciation to 'vākku' which is incorrect.",
+              "styling": "Red X icon"
+            },
+            {
+              "malayalam": "വാക്",
+              "error_type": "Missing gemination",
+              "explanation": "The consonant ക should be geminated (ക്ക) to represent the long /kː/ sound. വാക് is incomplete.",
+              "styling": "Red X icon"
+            }
+          ],
+          "attribution": {
+            "text": "Spelling validation powered by mlmorph Malayalam morphological analyzer",
+            "link": "https://gitlab.com/smc/mlmorph"
+          },
+          "styling": {
+            "section_background": "White card with green accent",
+            "heading": "Spelling Corrections",
+            "layout": "Correct form prominently displayed first, then list of incorrect variants with explanations"
+          }
+        },
+
+        "spelling_variants": {
+          "purpose": "DESCRIPTIVE - Show orthographically similar words for discovery",
+          "heading": "Similar Spellings",
+          "words": [
+            {
+              "malayalam": "വക്ക്",
+              "english": "turn, occasion",
+              "similarity": "One letter different (വാ → വ)",
+              "note": "Different meaning entirely"
+            },
+            {
+              "malayalam": "വിക്ക്",
+              "english": "hiccup",
+              "similarity": "First vowel different (ആ → ഇ)"
+            },
+            {
+              "malayalam": "വെക്കം",
+              "english": "heat, fever",
+              "similarity": "Different vowel and ending"
+            },
+            {
+              "malayalam": "വാഗ്",
+              "english": "speech (Sanskrit)",
+              "similarity": "Same root, different form"
+            }
+          ],
+          "styling": {
+            "background": "rgba(249, 115, 22, 0.08) - soft orange",
+            "border": "2px solid rgba(249, 115, 22, 0.3)",
+            "layout": "Grid of clickable word cards"
+          },
+          "rationale": "Help users discover related words they might have meant to search for, or expand vocabulary with orthographically related terms"
+        },
+
+        "usage_examples": {
+          "purpose": "Show word in context",
+          "examples": [
+            {
+              "malayalam": "അവൻ വാക്ക് പാലിച്ചു",
+              "transliteration": "avan vākk pālichu",
+              "english": "He kept his word",
+              "context": "Promise-keeping"
+            },
+            {
+              "malayalam": "നല്ല വാക്കുകൾ പറയുക",
+              "transliteration": "nalla vākkukaḷ paṟayuka",
+              "english": "Speak kind words",
+              "context": "Positive speech"
+            }
+          ]
+        },
+
+        "compound_forms": {
+          "purpose": "Show derived and compound words",
+          "compounds": [
+            {"form": "വാക്യം", "meaning": "sentence"},
+            {"form": "വാക്സംഹാരം", "meaning": "retraction of promise"},
+            {"form": "വാഗ്ദാനം", "meaning": "promise, commitment"}
+          ]
+        }
+      }
+    },
+
+    "6_visuwords_graph": {
+      "purpose": "Visual semantic network exploration - MUST USE MALAYALAM",
+      "requirement": "ALL nodes must display Malayalam text as primary label",
+      "layout": "Canvas-style area with positioned nodes and connecting edges",
+      "sample_graph": {
+        "center_node": {
+          "word": "വാക്ക്",
+          "english": "(word)",
+          "position": "center (50%, 50%)",
+          "styling": "rgba(60, 93, 255, 0.18) background, indigo text, larger size"
+        },
+        "connected_nodes": [
+          {
+            "word": "പദം",
+            "english": "(term)",
+            "relation": "synonym",
+            "position": "left (12%, 32%)",
+            "edge_color": "rgba(60, 93, 255, 0.2)"
+          },
+          {
+            "word": "ശബ്ദം",
+            "english": "(sound)",
+            "relation": "synonym",
+            "position": "right (14%, 42%)"
+          },
+          {
+            "word": "ഭാഷണം",
+            "english": "(speech)",
+            "relation": "hypernym",
+            "position": "top (55%, 15%)"
+          },
+          {
+            "word": "വാഗ്ദാനം",
+            "english": "(promise)",
+            "relation": "related meaning",
+            "position": "bottom (45%, 12%)"
+          },
+          {
+            "word": "വചനം",
+            "english": "(utterance)",
+            "relation": "synonym"
+          },
+          {
+            "word": "നാമം",
+            "english": "(noun)",
+            "relation": "hyponym"
+          }
+        ]
+      },
+      "modern_card_presentation": {
+        "description": "Instead of traditional force-directed graph, use modern card-based layout",
+        "implementation": "Grid of word cards with Malayalam prominent, hover effects, click to navigate",
+        "styling": "White cards with shadows, color-coded borders by relation type"
+      },
+      "styling": {
+        "container_background": "linear-gradient(160deg, rgba(60, 93, 255, 0.12), rgba(0, 167, 167, 0.12))",
+        "canvas_background": "rgba(255, 255, 255, 0.9) with dashed border",
+        "node_font_size": "Malayalam 0.9rem - 1.1rem, English meta text 0.75rem",
+        "edges": "2px lines with rgba(60, 93, 255, 0.2)"
+      }
+    },
+
+    "7_standards_compliance": {
+      "purpose": "Showcase data standards and interoperability",
+      "standards": [
+        {
+          "name": "TEI (Text Encoding Initiative)",
+          "description": "Dictionary entries encoded in TEI P5 XML",
+          "benefits": "Academic interoperability, citation standards"
+        },
+        {
+          "name": "SIL LIFT (Lexicon Interchange FormaT)",
+          "description": "Open format for lexical data exchange",
+          "benefits": "Tool compatibility, data portability"
+        },
+        {
+          "name": "Unicode Malayalam",
+          "description": "Full Unicode 15.0 Malayalam block support",
+          "benefits": "Cross-platform text rendering, searchability"
+        },
+        {
+          "name": "WordNet Synsets",
+          "description": "Semantic network integration",
+          "benefits": "Cognitive linguistic research, NLP applications"
+        }
+      ],
+      "styling": "Grid of cards with icon, title, description, and benefits list"
+    },
+
+    "8_community_roles": {
+      "purpose": "Encourage community participation",
+      "roles": [
+        {
+          "role": "Contributor",
+          "description": "Add new entries, improve definitions",
+          "call_to_action": "Start Contributing"
+        },
+        {
+          "role": "Reviewer",
+          "description": "Verify accuracy, validate sources",
+          "call_to_action": "Join Review Team"
+        },
+        {
+          "role": "Developer",
+          "description": "Build tools, improve platform",
+          "call_to_action": "See GitHub Repos"
+        },
+        {
+          "role": "Researcher",
+          "description": "Linguistic analysis, corpus studies",
+          "call_to_action": "Access Data"
+        }
+      ]
+    },
+
+    "9_roadmap": {
+      "purpose": "Show future development plans",
+      "phases": [
+        {
+          "phase": "Phase 1 - Foundation (Complete)",
+          "achievements": ["180K entries", "5 source dictionaries", "Basic search"]
+        },
+        {
+          "phase": "Phase 2 - Enhancement (In Progress)",
+          "goals": ["Audio pronunciations", "Advanced morphology", "Usage statistics"]
+        },
+        {
+          "phase": "Phase 3 - Intelligence (Planned)",
+          "goals": ["AI-assisted definitions", "Context-aware search", "Personalized learning"]
+        }
+      ]
+    },
+
+    "10_footer": {
+      "content": [
+        "Copyright notice with Creative Commons license",
+        "Links to GitHub, documentation, API",
+        "Contact information",
+        "Acknowledgments to source dictionaries and contributors"
+      ],
+      "styling": "Soft background rgba(243, 246, 255, 0.9), slate text, accent color links"
+    }
+  },
+
+  "interaction_patterns": {
+    "search_flow": {
+      "step_1": "User types in search input (Malayalam or English)",
+      "step_2": "Autocomplete suggestions appear (if implemented)",
+      "step_3": "User submits search via button or Enter key",
+      "step_4": "If inflected form detected, show morphology alert explaining lemmatization",
+      "step_5": "Display all dictionary sources with independent numbering",
+      "step_6": "Show etymology, semantic relations, usage examples",
+      "step_7": "Present spelling corrections if relevant",
+      "step_8": "Offer similar spellings for discovery"
+    },
+    
+    "navigation_patterns": {
+      "internal_links": "All Malayalam words are clickable to trigger new searches",
+      "external_links": "Dictionary source citations link to original scans/sources",
+      "smooth_scrolling": "Anchor links scroll smoothly to sections",
+      "back_to_top": "Floating button for long entries"
+    },
+    
+    "responsive_behavior": {
+      "desktop": "Two-column layouts, full navigation visible, prominent VisuWords graph",
+      "tablet": "Stacked columns, hamburger menu, VisuWords remains visible",
+      "mobile": "Single column, search remains prominent, collapsible sections for long entries"
+    }
+  },
+
+  "data_model": {
+    "entry_schema": {
+      "headword": {
+        "malayalam": "string",
+        "transliteration": "string (ISO 15919 or IPA)",
+        "ipa": "string (International Phonetic Alphabet)"
+      },
+      "part_of_speech": "string (Noun, Verb, Adjective, etc.)",
+      "etymology": {
+        "source_language": "string (Sanskrit, Tamil, Arabic, etc.)",
+        "source_form": "string",
+        "proto_form": "string (PIE, Proto-Dravidian, etc.)",
+        "cognates": "array of strings"
+      },
+      "dictionaries": [
+        {
+          "source": "string (Gundert, STV, Bailey, Datuk, WordNet)",
+          "abbreviation": "string",
+          "authority": "string (author/institution)",
+          "senses": [
+            {
+              "number": "integer",
+              "definition_malayalam": "string (if available)",
+              "definition_english": "string",
+              "examples": ["array of usage examples"],
+              "context": "string (register, domain, etc.)"
+            }
+          ],
+          "metadata": {
+            "page": "string",
+            "url": "string (link to source)",
+            "date": "string (publication date)"
+          }
+        }
+      ],
+      "morphology": {
+        "lemma": "string (base form)",
+        "inflection": "string (case, number, tense, etc.)",
+        "analysis": "string (mlmorph output)"
+      },
+      "semantic_relations": {
+        "synonyms": ["array of {malayalam, english}"],
+        "antonyms": ["array of {malayalam, english}"],
+        "hypernyms": ["array of {malayalam, english}"],
+        "hyponyms": ["array of {malayalam, english}"],
+        "meronyms": ["array of {malayalam, english}"],
+        "holonyms": ["array of {malayalam, english}"]
+      },
+      "spelling": {
+        "correct_form": "string",
+        "incorrect_forms": [
+          {
+            "form": "string",
+            "error_type": "string",
+            "explanation": "string"
+          }
+        ],
+        "variants": ["array of orthographic variants"]
+      },
+      "usage": {
+        "frequency": "string (High, Medium, Low)",
+        "register": "string (Formal, Informal, Literary, etc.)",
+        "domains": ["array of subject domains"],
+        "cefr_level": "string (A1, A2, B1, etc. for learners)"
+      },
+      "compounds": ["array of compound words using this word"],
+      "audio": {
+        "url": "string",
+        "speaker": "string",
+        "dialect": "string"
+      }
+    }
+  },
+
+  "linguistic_features": {
+    "morphological_parsing": {
+      "tool": "mlmorph - Malayalam morphological analyzer",
+      "capability": "Analyzes inflected forms, identifies lemma, parses case/number/tense",
+      "integration": "When user searches inflected form (e.g., വാക്കിന്), show alert box explaining this is dative case of വാക്ക്",
+      "user_benefit": "Educational - helps learners understand Malayalam grammar structure",
+      "url": "https://gitlab.com/smc/mlmorph"
+    },
+    
+    "etymology_display": {
+      "purpose": "Show historical development of words",
+      "layers": [
+        "Modern Malayalam form",
+        "Sanskrit/Tamil/Arabic source (if applicable)",
+        "Proto-Indo-European or Proto-Dravidian root (if traceable)",
+        "Cognates in other languages"
+      ],
+      "user_benefit": "Deepens understanding of word origins, cultural connections"
+    },
+    
+    "semantic_networks": {
+      "source": "Malayalam WordNet",
+      "relations": [
+        "Synonymy (same meaning)",
+        "Antonymy (opposite meaning)",
+        "Hypernymy (broader category)",
+        "Hyponymy (narrower category)",
+        "Meronymy (part-of relationship)",
+        "Holonymy (whole-of relationship)"
+      ],
+      "visualization": "VisuWords graph with Malayalam labels, clickable nodes"
+    },
+    
+    "orthographic_validation": {
+      "correct_spellings": "Prescriptive guidance on correct Malayalam orthography",
+      "common_errors": "Document frequent mistakes with explanations",
+      "variants": "Descriptive documentation of acceptable spelling variations",
+      "user_benefit": "Helps users learn proper Malayalam writing conventions"
+    }
+  },
+
+  "accessibility_requirements": {
+    "wcag_compliance": "WCAG 2.1 Level AA minimum",
+    "specific_features": [
+      "Color contrast ratios of 4.5:1 for normal text, 3:1 for large text",
+      "Keyboard navigation for all interactive elements",
+      "Screen reader labels for all icons and images",
+      "Focus indicators visible on all focusable elements",
+      "Responsive text sizing (rem/em units, not px)",
+      "No content that flashes more than 3 times per second",
+      "Skip-to-content link for keyboard users",
+      "ARIA labels for search form, navigation, and interactive widgets"
+    ],
+    "malayalam_screen_reader_support": {
+      "note": "Ensure lang='ml' attribute on Malayalam content for proper screen reader pronunciation",
+      "fonts": "Use Unicode-compliant Malayalam fonts with proper conjunct support"
+    }
+  },
+
+  "performance_optimization": {
+    "font_loading": "Preload critical fonts (RaghuMalayalamSans) with font-display: swap",
+    "css_architecture": "Single CSS file with logical grouping, minimize specificity conflicts",
+    "image_optimization": "Use SVG for icons and graphics where possible",
+    "lazy_loading": "Lazy load VisuWords graph and non-critical images",
+    "caching": "Aggressive caching of font files and static assets",
+    "critical_css": "Inline above-the-fold styles for faster initial render"
+  },
+
+  "future_enhancements": {
+    "interactive_features": [
+      "Drag-and-drop VisuWords nodes for custom arrangement",
+      "Save favorite words to personal lists",
+      "Share definitions via social media or permalink",
+      "Compare two words side-by-side",
+      "Word-of-the-day feature"
+    ],
+    "advanced_search": [
+      "Filter by part of speech, etymology, source dictionary",
+      "Regex search for pattern matching",
+      "Phonetic search for words that sound similar",
+      "Full-text search across definitions and examples"
+    ],
+    "community_features": [
+      "User-submitted usage examples with voting",
+      "Discussion forums for etymology debates",
+      "Crowdsourced audio pronunciations",
+      "Translation suggestions and corrections",
+      "Reputation system for contributors"
+    ],
+    "ai_integration": [
+      "AI-generated example sentences",
+      "Context-aware definition selection",
+      "Personalized learning recommendations",
+      "Automatic translation quality assessment"
+    ]
+  },
+
+  "development_notes": {
+    "framework": "Static HTML/CSS initially - can be migrated to React/Vue later",
+    "backend": "Future API integration for dynamic content (currently conceptual static page)",
+    "database": "Dictionary data in structured JSON/XML, can be migrated to PostgreSQL with full-text search",
+    "search_implementation": "Client-side filtering for prototype, ElasticSearch for production",
+    "version_control": "Git repository with semantic versioning",
+    "testing": "Manual cross-browser testing (Chrome, Firefox, Safari, Edge), automated accessibility testing with axe-core",
+    "deployment": "Static site hosting (Netlify, Vercel, GitHub Pages) for concept page"
+  },
+
+  "design_iteration_history": [
+    {
+      "iteration": 1,
+      "change": "Initial full page concept",
+      "rationale": "User requested complete reimagination of Olam 2.0"
+    },
+    {
+      "iteration": 2,
+      "change": "Moved search to prominent hero section",
+      "rationale": "User feedback: 'bring the word search option to the top of the page...make it appear prominent'"
+    },
+    {
+      "iteration": 3,
+      "change": "Converted VisuWords to Malayalam labels",
+      "rationale": "User requirement: 'everything looks perfect except for visuwords...entries must be in Malayalam'"
+    },
+    {
+      "iteration": 4,
+      "change": "Integrated authentic Sabdatharavali content",
+      "rationale": "User provided real dictionary entry: 'this is the entry from Sabdatharavali (STV)'"
+    },
+    {
+      "iteration": 5,
+      "change": "Created multi-dictionary presentation model",
+      "rationale": "User question: 'how do we present a word if a word appears in more than one dictionaries?'"
+    },
+    {
+      "iteration": 6,
+      "change": "Added etymology, morphology, relations, spelling features",
+      "rationale": "User request: 'add...etymology info, morphology parsing, related entries, similar spellings'"
+    },
+    {
+      "iteration": 7,
+      "change": "Implemented spelling corrections feature",
+      "rationale": "User requirement: 'add a section on incorrect spellings...വാക്ക് (correct), വാക്കു്, വാക്കു (incorrect)'"
+    }
+  ],
+
+  "key_insights": [
+    "Dictionary users expect search to be THE primary action - don't bury it in navigation",
+    "Authentic content builds trust - use real dictionary entries, not placeholder text",
+    "Malayalam script must be prominent and well-rendered - this is a Malayalam dictionary first",
+    "Multi-source presentation requires careful UI design to avoid overwhelming users - separate cards work better than merged definitions",
+    "Educational scaffolding (morphology alerts, etymology, spelling corrections) transforms a dictionary into a learning tool",
+    "Visual hierarchy through color (green=correct, red=error, orange=related, teal=linguistic info) aids quick scanning",
+    "Prescriptive (corrections) and descriptive (variants) features serve different user needs and should be separated",
+    "Glassmorphism with soft gradients creates modern feel while maintaining readability",
+    "Responsive design must prioritize mobile search experience - Malayalam typing on mobile is common"
+  ],
+
+  "implementation_checklist": [
+    {
+      "task": "Set up HTML5 document structure with proper meta tags",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Import Google Fonts (DM Sans, Playfair Display) and SMC RaghuMalayalamSans",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Define CSS custom properties for design system",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Create sticky header with logo and navigation",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Build prominent search hero section with gradient background",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Implement mission hero with glassmorphism effects",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Create search modes feature grid",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Build comprehensive sample entry (വാക്ക്) with all features",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Implement multi-dictionary source cards (Gundert, STV, Bailey, Datuk, WordNet)",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Add morphology alert component",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Create etymology section with PIE roots",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Build semantic relations grid (synonyms, antonyms, hypernyms)",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Implement spelling corrections (prescriptive)",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Add similar spellings section (descriptive)",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Create VisuWords graph with Malayalam labels",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Build standards compliance cards",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Add community roles section",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Create roadmap timeline",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Implement footer with links and acknowledgments",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Add responsive breakpoints (820px, 640px)",
+      "status": "✓ Complete"
+    },
+    {
+      "task": "Test cross-browser compatibility",
+      "status": "⏳ Pending"
+    },
+    {
+      "task": "Validate accessibility with axe-core",
+      "status": "⏳ Pending"
+    },
+    {
+      "task": "Optimize performance (font loading, critical CSS)",
+      "status": "⏳ Pending"
+    }
+  ],
+
+  "files_generated": {
+    "html": {
+      "filename": "olam2-claude.html",
+      "description": "Complete HTML5 structure with all sections, authentic Malayalam content, sample entry showcase",
+      "lines": "~800+ lines",
+      "status": "Complete and functional"
+    },
+    "css": {
+      "filename": "olam2-claude.css",
+      "description": "Comprehensive design system with custom properties, glassmorphism effects, responsive breakpoints",
+      "lines": "~1200+ lines",
+      "status": "Complete with all component styles"
+    }
+  },
+
+  "recreation_instructions": {
+    "step_1": "Create base HTML5 document with proper DOCTYPE, lang='ml' attribute, and meta tags for responsive viewport",
+    
+    "step_2": "In <head>, import fonts from Google Fonts (DM Sans 400/500/700, Playfair Display 500/600) and SMC RaghuMalayalamSans from https://smc.org.in/fonts/raghumalayalamsans.css",
+    
+    "step_3": "Create CSS file and define all custom properties in :root: colors (indigo #3c5dff, teal #00a7a7, coral #ff7a6b), gradients, shadows, fonts",
+    
+    "step_4": "Build sticky header with backdrop-filter blur, logo 'Olam ഓലം', and navigation links (Dictionaries, Tools, About, Contribute) with underline hover animation",
+    
+    "step_5": "Create SEARCH HERO as first main section with: linear-gradient(165deg, indigo→teal) background, large search input container (white, pill-shaped, 1.25-1.5rem font), search button with gradient, mode toggles (Dictionary/Translate/Spell/Audio) as glass-morphic buttons, floating Malayalam logo, badges (Open Source, Community Driven, 180K+ entries)",
+    
+    "step_6": "Build mission hero section with two-column grid: left column with heading 'A living dictionary വാക്കുകളുടെ സമുദ്രം' and description paragraph; right column with stats cards (180,000+ entries, community-verified, historical+modern). Apply double-layered glassmorphism with ::before and ::after pseudo-elements, radial gradients with indigo/teal accents",
+    
+    "step_7": "Create features grid with 4 mode cards: Dictionary Lookup, Spell Check, Translation, Audio Pronunciation. Each card has title, description, and color-coded tags. Use auto-fit grid minmax(260px, 1fr), white cards with shadows and hover lift effects",
+    
+    "step_8": "Build comprehensive sample entry showcase for 'വാക്ക്': \n- Entry header with large Malayalam headword (2rem-2.6rem), IPA /ʋaːkːɨ̆/ in monospace, badges (Noun, Sanskrit origin, High frequency, CEFR A1)\n- Morphology alert box: teal-tinted background (rgba(20,184,166,0.08)), 4px teal left border, info icon, text explaining 'You searched for വാക്കിന് (inflected form). Showing lemma: വാക്ക്', attribution to mlmorph",
+    
+    "step_9": "Create multi-dictionary sources section with 5 separate cards:\n- Gundert (1872): 3 senses with definitions and examples\n- Sabdatharavali: 2 senses with Malayalam and English definitions\n- Bailey: 2 senses\n- Datuk: 1 sense with compounds\n- WordNet: Synset with gloss, examples, hypernyms, synonyms\nEach card has 2px colored border, white background, numbered senses, hover shadow lift. Use grid layout with .dict-sense for individual senses",
+    
+    "step_10": "Add etymology section: indigo gradient background, heading 'Etymology', flow diagram showing Modern Malayalam വാക്ക് → Sanskrit वाच् (vāc) → PIE *wekʷ- with meanings and cognates (Latin vox, English voice)",
+    
+    "step_11": "Create semantic relations section with grid layout: \n- Synonyms: പദം, ശബ്ദം, വചനം, ഭാഷണം\n- Antonyms: മൗനം, നിശബ്ദത\n- Hypernyms: ഭാഷാഘടകം, ആശയവിനിമയോപാധി\n- Hyponyms: നാമം, ക്രിയ, വിശേഷണം\nEach relation type has color-coded header, clickable Malayalam word cards with English glosses",
+    
+    "step_12": "Implement spelling corrections section (PRESCRIPTIVE):\n- Green gradient background (rgba(16,185,129,0.08))\n- Correct spelling card: വാക്ക് with green checkmark, 2px green border (#10b981), large font (1.75rem)\n- Incorrect forms list: വാക്കു്, വാക്കു, വാക് with red X icons, error explanations, red-tinted backgrounds (rgba(239,68,68,0.08))\n- Footer with mlmorph attribution and link",
+    
+    "step_13": "Add similar spellings section (DESCRIPTIVE):\n- Orange-tinted background (rgba(249,115,22,0.08))\n- Grid of orthographically similar words: വക്ക്, വിക്ക്, വെക്കം, വാഗ്\n- Each word card shows Malayalam term, English meaning, similarity note\n- 2px orange border (rgba(249,115,22,0.3))",
+    
+    "step_14": "Create VisuWords section:\n- Container with gradient background linear-gradient(160deg, rgba(60,93,255,0.12), rgba(0,167,167,0.12))\n- Canvas area (white with dashed border) containing positioned nodes\n- Center node: വാക്ക് at (50%, 50%) with indigo background\n- Connected nodes: പദം, ശബ്ദം, ഭാഷണം, വാഗ്ദാനം, വചനം, നാമം positioned around center\n- Edges connecting nodes (2px rgba lines)\n- All nodes use Malayalam as primary label (0.9-1.1rem), English meta text smaller (0.75rem)\n- Modern card-based presentation option: grid of word cards instead of force-directed graph",
+    
+    "step_15": "Build standards compliance grid with 4 cards: TEI, SIL LIFT, Unicode Malayalam, WordNet Synsets. Each card has icon, title, description, benefits list. Use grid with minmax(240px, 1fr)",
+    
+    "step_16": "Create community roles section with 4 role cards: Contributor, Reviewer, Developer, Researcher. Each has role title, description, and call-to-action button. White cards with shadows",
+    
+    "step_17": "Add roadmap section with 3 phase cards: Phase 1 (Complete), Phase 2 (In Progress), Phase 3 (Planned). Each phase lists achievements or goals",
+    
+    "step_18": "Implement footer: soft background rgba(243,246,255,0.9), slate text color, flex layout with copyright, links (GitHub, docs, API), contact info, acknowledgments. Accent color for links",
+    
+    "step_19": "Add responsive breakpoints:\n- @media (max-width: 820px): Hide nav, adjust hero border-radius\n- @media (max-width: 640px): Single column layouts, stack entry panels\n- Use clamp() throughout for fluid typography and spacing",
+    
+    "step_20": "Apply final polish: focus states for keyboard navigation, hover effects on all interactive elements, smooth transitions (160-200ms ease), ensure all Malayalam text uses var(--font-mal) or var(--font-body) with RaghuMalayalamSans"
+  },
+
+  "testing_scenarios": [
+    {
+      "scenario": "Search workflow",
+      "steps": [
+        "Load page - search hero should be immediately visible",
+        "Click search input - focus ring appears",
+        "Type Malayalam text - font renders correctly",
+        "Click search button - (would trigger search in live version)",
+        "Check that mode toggles are clickable and have visual feedback"
+      ],
+      "expected_result": "Smooth interaction, Malayalam text readable, clear affordances"
+    },
+    {
+      "scenario": "Entry comprehension",
+      "steps": [
+        "Scroll to sample entry (വാക്ക്)",
+        "Read morphology alert - should clearly explain inflection",
+        "Review all 5 dictionary sources - each should be visually distinct",
+        "Examine etymology flow - should show clear progression from PIE to modern",
+        "Check semantic relations - all words should be clickable (conceptually)",
+        "Compare spelling corrections (green) vs similar spellings (orange) - distinction should be clear"
+      ],
+      "expected_result": "Information hierarchy clear, educational scaffolding helpful, no confusion between prescriptive and descriptive features"
+    },
+    {
+      "scenario": "Responsive behavior",
+      "steps": [
+        "Resize browser to 820px - nav should disappear",
+        "Resize to 640px - hero and entry should stack single-column",
+        "Check that search hero remains prominent at all sizes",
+        "Verify Malayalam text remains readable at small sizes",
+        "Test touch targets on mobile (buttons should be 44x44px minimum)"
+      ],
+      "expected_result": "Layout adapts smoothly, no horizontal scroll, text remains legible"
+    },
+    {
+      "scenario": "Accessibility audit",
+      "steps": [
+        "Run axe-core automated testing",
+        "Tab through all interactive elements - focus indicators visible",
+        "Test with screen reader - Malayalam content announced correctly (requires lang='ml')",
+        "Check color contrast ratios - all text meets WCAG AA",
+        "Verify alt text on all images/icons"
+      ],
+      "expected_result": "Zero critical accessibility issues, WCAG 2.1 AA compliance"
+    },
+    {
+      "scenario": "Cross-browser testing",
+      "steps": [
+        "Test in Chrome, Firefox, Safari, Edge",
+        "Verify Malayalam font rendering (RaghuMalayalamSans fallback to system fonts)",
+        "Check glassmorphism effects (backdrop-filter) with fallbacks",
+        "Test gradient backgrounds and rgba colors",
+        "Verify clamp() CSS function support (or fallbacks)"
+      ],
+      "expected_result": "Consistent rendering across browsers, graceful degradation where needed"
+    }
+  ],
+
+  "success_metrics": {
+    "user_experience": [
+      "Time to first search < 2 seconds (page load + user action)",
+      "Search input visible within viewport on all devices without scrolling",
+      "Users can distinguish between different dictionary sources",
+      "Spelling corrections reduce search errors by 30%+",
+      "VisuWords graph increases vocabulary exploration by 50%+"
+    ],
+    "technical_performance": [
+      "First Contentful Paint < 1.5s",
+      "Largest Contentful Paint < 2.5s",
+      "Cumulative Layout Shift < 0.1",
+      "Time to Interactive < 3.5s",
+      "Lighthouse Performance score > 90"
+    ],
+    "accessibility": [
+      "WCAG 2.1 Level AA compliance (100%)",
+      "Zero critical axe-core violations",
+      "Keyboard navigation functional for all features",
+      "Screen reader compatibility with JAWS, NVDA, VoiceOver"
+    ],
+    "engagement": [
+      "Bounce rate < 40%",
+      "Average session duration > 3 minutes",
+      "Pages per session > 3 (clicking through related words)",
+      "Return visitor rate > 30%"
+    ]
+  },
+
+  "maintenance_plan": {
+    "regular_updates": [
+      "Add new dictionary entries weekly",
+      "Update etymology information with latest research",
+      "Refine spelling corrections based on user searches",
+      "Expand semantic relations using WordNet updates",
+      "Add more audio pronunciations"
+    ],
+    "code_maintenance": [
+      "Review and update dependencies (fonts, polyfills) quarterly",
+      "Run accessibility audits monthly",
+      "Performance testing after any major changes",
+      "Browser compatibility testing with new releases",
+      "Refactor CSS for maintainability as needed"
+    ],
+    "community_engagement": [
+      "Review and merge user-submitted corrections",
+      "Respond to GitHub issues within 48 hours",
+      "Monthly blog posts about new features or dictionary insights",
+      "Annual survey of user needs and satisfaction"
+    ]
+  },
+
+  "olam_3_vision": {
+    "overview": "Future research directions for Olam 3.0 that reimagine dictionary architecture and leverage artificial intelligence",
+    
+    "concept_1_modular_dictionary_data": {
+      "vision": "Dictionary data as pluggable, composable modules rather than monolithic databases",
+      "core_idea": "Treat each dictionary source (Gundert, STV, Bailey, WordNet, etc.) as an independent module that can be loaded, unloaded, updated, or extended without affecting the core platform",
+      
+      "architectural_principles": [
+        "Microservices for lexicographic data - each dictionary is a separate API endpoint or data package",
+        "Version control for dictionary modules - Git-like versioning for tracking changes to lexical data",
+        "Hot-swappable sources - users can enable/disable dictionaries on the fly",
+        "Community-contributed modules - third-party dictionaries can be published and installed like npm packages",
+        "Standardized module schema - all dictionaries expose data through common interface (JSON-LD, TEI, LIFT)",
+        "Dependency management - dictionaries can depend on other dictionaries (e.g., etymological dictionary depends on historical dictionary)"
+      ],
+      
+      "technical_implementation": {
+        "module_format": "Each dictionary as npm-style package with package.json metadata",
+        "module_registry": "Central registry like npm/PyPI for Malayalam dictionary modules",
+        "loader_system": "Dynamic import() for lazy-loading dictionary data on demand",
+        "caching_strategy": "Service workers cache frequently used modules, IndexedDB for offline access",
+        "api_specification": "OpenAPI/GraphQL schema for standardized dictionary queries across all modules",
+        "versioning": "Semantic versioning (1.0.0) for dictionary data updates",
+        "conflict_resolution": "When multiple modules define same word, UI presents all definitions with source attribution (already implemented in Olam 2.0 multi-dictionary view)"
+      },
+      
+      "user_benefits": [
+        "Customizable experience - enable only the dictionaries you trust or need",
+        "Faster load times - only download modules you use",
+        "Offline functionality - cache preferred dictionaries locally",
+        "Domain-specific modules - install medical, legal, or technical Malayalam dictionaries as separate modules",
+        "Historical snapshots - revert to older dictionary versions for historical research",
+        "Experimentation - try community dictionaries without committing to them"
+      ],
+      
+      "developer_benefits": [
+        "Distributed contribution model - anyone can publish a Malayalam dictionary module",
+        "Independent updates - fix bugs in one dictionary without rebuilding entire platform",
+        "A/B testing - compare different dictionary sources side-by-side",
+        "API-first design - dictionaries can be used in any application, not just Olam",
+        "Reduced maintenance burden - dictionary maintainers own their own modules",
+        "Innovation acceleration - new dictionary types (audio, video, sign language) can be added as modules"
+      ],
+      
+      "example_modules": [
+        "@olam/gundert - Hermann Gundert's 1872 dictionary",
+        "@olam/sabdatharavali - Sabdatharavali (STV) comprehensive dictionary",
+        "@olam/wordnet-mal - Malayalam WordNet semantic network",
+        "@olam/olam-core - Community-maintained open dictionary",
+        "@olam/etymology - Etymological dictionary (Sanskrit, Dravidian, Arabic roots)",
+        "@olam/pronunciation - Audio pronunciation database",
+        "@olam/medical-terms - Medical Malayalam terminology",
+        "@olam/legal-terms - Legal Malayalam vocabulary",
+        "@olam/colloquial - Colloquial and slang expressions",
+        "@community/user-submitted - User-contributed definitions with voting"
+      ],
+      
+      "module_metadata_schema": {
+        "name": "@olam/gundert",
+        "version": "1.2.0",
+        "description": "Hermann Gundert's Malayalam-English Dictionary (1872)",
+        "author": "Hermann Gundert (digitized by SMC)",
+        "license": "Public Domain",
+        "language": "ml-IN",
+        "entry_count": 32000,
+        "last_updated": "2025-10-15",
+        "data_format": "TEI-P5-XML",
+        "api_endpoint": "https://api.olam.org/modules/gundert/v1",
+        "download_size": "12MB",
+        "dependencies": [],
+        "tags": ["historical", "authoritative", "19th-century"],
+        "maintainer": "team@olam.org"
+      },
+      
+      "governance_model": {
+        "core_modules": "Maintained by Olam foundation - guaranteed quality and availability",
+        "community_modules": "Published by third parties - rating and review system",
+        "verification_badges": "Verified modules meet quality standards (accuracy, completeness, format)",
+        "dispute_resolution": "Academic board reviews contested definitions or etymologies",
+        "deprecation_policy": "Modules can be marked deprecated but remain available for backward compatibility"
+      },
+      
+      "research_questions": [
+        "How to handle contradictory definitions across modules?",
+        "What metrics determine module quality and trustworthiness?",
+        "How to incentivize community module creation while maintaining quality?",
+        "Can machine learning automatically merge similar entries from different modules?",
+        "How to preserve attribution while presenting unified search results?",
+        "What's the optimal balance between module granularity and user complexity?"
+      ]
+    },
+    
+    "concept_2_ai_era_dictionary": {
+      "vision": "Leverage artificial intelligence to transform the dictionary from static reference to intelligent language partner",
+      "core_idea": "AI doesn't replace lexicographers—it amplifies their work and personalizes the learning experience for each user",
+      
+      "ai_capabilities": {
+        "1_contextual_definition_selection": {
+          "capability": "AI determines which sense/definition to show based on user's context",
+          "use_case": "User searches 'വാക്ക്' while reading a legal document → AI prioritizes legal sense ('testimony, statement') over general sense ('word')",
+          "implementation": "NLP analysis of surrounding text, user's reading history, domain detection",
+          "benefit": "Reduces cognitive load—no more manually scanning through 8 definitions to find the right one"
+        },
+        
+        "2_personalized_learning_paths": {
+          "capability": "AI creates custom vocabulary learning sequences based on user's proficiency and goals",
+          "use_case": "Learner wants to read Malayalam news → AI suggests high-frequency journalism vocabulary in optimal learning order",
+          "implementation": "Spaced repetition algorithm, CEFR level tracking, goal-based curriculum generation",
+          "benefit": "Accelerated language acquisition with personalized pacing"
+        },
+        
+        "3_intelligent_example_generation": {
+          "capability": "LLM generates contextual example sentences when dictionary lacks them",
+          "use_case": "Old dictionary entry has definition but no examples → AI creates 3-5 example sentences showing usage",
+          "implementation": "Fine-tuned Malayalam GPT model, human review before publication, community voting on quality",
+          "benefit": "Every word has rich contextual examples, not just high-frequency words"
+        },
+        
+        "4_semantic_search_beyond_keywords": {
+          "capability": "Search by meaning, not just by spelling",
+          "use_case": "User searches 'what do you call someone who never gives up' → AI returns 'അചഞ്ചലം' (steadfast), 'സഹിഷ്ണു' (patient), 'ദൃഢനിശ്ചയം' (determination)",
+          "implementation": "Semantic embeddings (sentence-transformers), vector similarity search, Malayalam BERT",
+          "benefit": "Tip-of-the-tongue resolution, conceptual vocabulary building"
+        },
+        
+        "5_pronunciation_coaching": {
+          "capability": "AI analyzes user's pronunciation and provides specific feedback",
+          "use_case": "User records themselves saying 'വാക്ക്' → AI detects they're not geminating the /kː/ → provides targeted exercises",
+          "implementation": "Speech recognition, phoneme alignment, prosody analysis",
+          "benefit": "Personalized pronunciation improvement without human tutor"
+        },
+        
+        "6_translation_quality_assessment": {
+          "capability": "AI evaluates whether user's Malayalam translation captures original meaning",
+          "use_case": "User translates English sentence to Malayalam → AI highlights fluency issues, suggests more natural phrasing",
+          "implementation": "Neural machine translation + quality estimation, back-translation comparison",
+          "benefit": "Immediate feedback for language learners and translators"
+        },
+        
+        "7_etymology_discovery": {
+          "capability": "AI traces word origins even when not documented in traditional dictionaries",
+          "use_case": "User searches modern slang or loan word → AI hypothesizes origin based on phonetic similarity, semantic drift patterns",
+          "implementation": "Historical linguistics models, cognate detection across Dravidian/Indo-Aryan languages",
+          "benefit": "Etymology available for 100% of words, not just historically documented ones"
+        },
+        
+        "8_dialectal_variation_mapping": {
+          "capability": "AI shows how word usage varies across Kerala regions",
+          "use_case": "User searches 'വാക്ക്' → AI shows that Malabar region also uses 'വാചകം' for same concept",
+          "implementation": "Corpus analysis of regional texts, crowdsourced dialect data, geolocation metadata",
+          "benefit": "Cultural awareness, reduced miscommunication across dialects"
+        },
+        
+        "9_real_time_corpus_insights": {
+          "capability": "AI shows how word usage is evolving in contemporary Malayalam",
+          "use_case": "Dictionary says 'വാക്ക്' is formal → AI shows it's actually common in social media, trending in political discourse",
+          "implementation": "Real-time analysis of news, social media, books published this year",
+          "benefit": "Dictionary stays current without manual editorial cycles"
+        },
+        
+        "10_conversational_dictionary_interface": {
+          "capability": "Ask dictionary questions in natural language",
+          "use_case": "User asks 'What's the difference between വാക്ക് and പദം?' → AI provides comparative analysis with usage examples",
+          "implementation": "RAG (retrieval-augmented generation) over dictionary data, conversational UI",
+          "benefit": "Dictionary becomes a language tutor, not just a lookup tool"
+        }
+      },
+      
+      "ethical_considerations": {
+        "transparency": "Always show when AI-generated content vs human-curated dictionary data",
+        "attribution": "Credit original lexicographers even when AI enhances their work",
+        "bias_mitigation": "Regularly audit AI for gender, caste, regional, religious biases in Malayalam",
+        "privacy": "User learning data stays private, not used for ad targeting",
+        "human_in_the_loop": "AI suggestions reviewed by Malayalam experts before publication",
+        "fallback_gracefully": "When AI is uncertain, show traditional dictionary entry",
+        "cultural_sensitivity": "AI trained to respect Malayalam literary traditions and cultural nuances",
+        "open_source_models": "Prefer open-source Malayalam NLP models for community auditability"
+      },
+      
+      "technical_architecture": {
+        "frontend": "React/Vue with AI chat interface, voice input/output",
+        "backend": "FastAPI Python server, LangChain for LLM orchestration",
+        "models": [
+          "Malayalam BERT for embeddings and semantic search",
+          "Fine-tuned GPT-4 for example generation and explanations",
+          "Whisper for speech recognition",
+          "Tacotron/VITS for speech synthesis",
+          "Custom NER model for Malayalam morphology"
+        ],
+        "vector_database": "Pinecone or Weaviate for semantic search over 180K entries",
+        "caching": "Redis for frequent queries, CloudFlare for static assets",
+        "monitoring": "Track AI accuracy, user satisfaction, false positives"
+      },
+      
+      "data_requirements": {
+        "training_corpora": [
+          "Malayalam Wikipedia (full dump)",
+          "Project Madurai texts (classical literature)",
+          "Malayalam news archives (2000-2025)",
+          "Social media (Twitter/X, Facebook public posts with consent)",
+          "Movie subtitles and scripts",
+          "Government documents and legal texts",
+          "Academic papers and textbooks",
+          "User-contributed example sentences (with permission)"
+        ],
+        "human_annotations": [
+          "10K+ example sentences labeled for sense disambiguation",
+          "5K+ pronunciation recordings from diverse speakers",
+          "1K+ dialect variations manually tagged",
+          "Etymology verification by historical linguists"
+        ],
+        "continuous_learning": "User feedback (thumbs up/down on AI responses) retrains models monthly"
+      },
+      
+      "user_experience_innovations": [
+        "Voice-first interface - speak Malayalam, get spoken responses",
+        "AR overlay - point camera at Malayalam text, see instant definitions",
+        "Browser extension - hover over any Malayalam word on web, get AI explanation",
+        "WhatsApp bot - dictionary available in India's most popular messaging app",
+        "Gamification - earn points for teaching AI new words or correcting mistakes",
+        "Social learning - share interesting words, see what friends are learning",
+        "Reading mode - paste Malayalam article, click any word for instant AI-powered definition in context"
+      ],
+      
+      "business_model": {
+        "free_tier": "Basic dictionary lookups, limited AI queries per day",
+        "premium_tier": "Unlimited AI features, personalized learning, offline access, ad-free",
+        "educational_licenses": "Schools and universities get premium access for students",
+        "api_access": "Developers pay per API call for commercial applications",
+        "sponsorships": "Cultural organizations sponsor development of specific modules",
+        "grants": "Government and foundation grants for language preservation"
+      },
+      
+      "research_questions": [
+        "How to measure AI-generated example quality objectively?",
+        "Can AI learn Malayalam literary aesthetics (വാക്ചാതുര്യം)?",
+        "How to prevent AI from reinforcing existing dictionary biases?",
+        "What's the right balance of AI automation vs human curation?",
+        "Can AI help revitalize endangered Malayalam dialects?",
+        "How to make AI explanations culturally appropriate for Malayalam speakers?",
+        "Can AI predict which words will enter Malayalam from other languages?",
+        "How to evaluate if AI improves language learning outcomes vs traditional dictionary?"
+      ]
+    },
+    
+    "synergy_between_concepts": {
+      "combined_vision": "Modular dictionary architecture (Concept 1) provides clean data for AI training (Concept 2), while AI (Concept 2) can automatically generate new dictionary modules (Concept 1)",
+      
+      "examples": [
+        "AI analyzes user search patterns across all modules → suggests new specialized modules to create (e.g., 'Malayalam cooking terms' if many food-related searches)",
+        "Community contributes new module → AI validates entries for consistency, suggests missing definitions",
+        "AI learns from multiple dictionary modules → provides synthesis across sources instead of showing contradictions",
+        "Modules track which AI features access their data → lexicographers see how their work is being used",
+        "AI-generated content becomes a module itself → '@olam/ai-examples' can be enabled/disabled by users who prefer traditional dictionaries"
+      ],
+      
+      "feedback_loops": [
+        "User queries → AI learns patterns → Suggests which modules need expansion → Community creates content → Better user experience",
+        "Module usage analytics → AI prioritizes loading popular modules → Faster search → More users → More data for AI improvement"
+      ]
+    },
+    
+    "implementation_roadmap": {
+      "phase_1_foundation": {
+        "timeline": "6-12 months",
+        "goals": [
+          "Design module specification and registry",
+          "Convert existing 5 dictionaries (Gundert, STV, Bailey, Datuk, WordNet) to module format",
+          "Build module loader and dependency resolver",
+          "Create developer documentation for module creation",
+          "Train basic Malayalam BERT model for semantic search"
+        ]
+      },
+      
+      "phase_2_ai_integration": {
+        "timeline": "12-18 months",
+        "goals": [
+          "Implement contextual definition selection",
+          "Launch conversational dictionary interface (chat)",
+          "Add voice input/output",
+          "Build personalized learning paths",
+          "Release browser extension with AI features"
+        ]
+      },
+      
+      "phase_3_ecosystem_growth": {
+        "timeline": "18-24 months",
+        "goals": [
+          "Open module registry for community submissions",
+          "Launch premium tier with advanced AI features",
+          "Deploy AR mobile app",
+          "Publish API for third-party developers",
+          "Partner with schools for educational pilots"
+        ]
+      },
+      
+      "phase_4_intelligence": {
+        "timeline": "24-36 months",
+        "goals": [
+          "Real-time corpus analysis of contemporary Malayalam",
+          "Dialect variation mapping across Kerala",
+          "AI pronunciation coaching with feedback",
+          "Automatic etymology discovery",
+          "Predictive suggestions for word evolution"
+        ]
+      }
+    },
+    
+    "success_metrics": {
+      "for_modular_architecture": [
+        "Number of community-published modules (target: 20+ within 2 years)",
+        "Module download/install rate (target: 50K+ installs across all modules)",
+        "Average modules enabled per user (target: 3-5 core + 2-3 specialized)",
+        "API uptime for module registry (target: 99.9%)",
+        "Time from module update to user device (target: < 1 hour with caching)"
+      ],
+      
+      "for_ai_features": [
+        "AI response accuracy (target: 90%+ validated by Malayalam experts)",
+        "User satisfaction with AI-generated examples (target: 4.5/5 stars)",
+        "Reduction in 'definition not found' searches (target: 50% reduction)",
+        "Learning outcome improvement (target: 30% faster vocabulary acquisition vs traditional dictionary)",
+        "Voice query success rate (target: 85%+ first-try recognition)"
+      ],
+      
+      "business_sustainability": [
+        "Premium conversion rate (target: 5% of free users)",
+        "API revenue (target: $50K+ annually from developers)",
+        "Grant funding secured (target: $200K+ for language preservation)",
+        "User retention (target: 40%+ monthly active users return)",
+        "Community contributions (target: 1000+ user-submitted examples monthly)"
+      ]
+    }
+  },
+
+  "conclusion": {
+    "summary": "This JSON prompt documents the complete reimagination of Olam 2.0, a Malayalam dictionary platform that prioritizes search functionality, authentic Malayalam content, multi-source lexicographic data aggregation, and educational linguistic features. The design employs modern glassmorphism aesthetics with a carefully crafted color hierarchy (indigo for dictionary content, teal for linguistic features, green for correct forms, red for errors, orange for discovery). The implementation progressed through 7 major iterations based on user feedback, resulting in a comprehensive, accessible, and linguistically sophisticated dictionary interface. Additionally, this document captures the vision for Olam 3.0, exploring two revolutionary concepts: modular dictionary architecture and AI-powered intelligent language assistance.",
+    
+    "key_innovations": [
+      "Search-first architecture with gradient hero section",
+      "Multi-dictionary presentation model with independent sense numbering",
+      "Integrated morphological parsing for educational scaffolding",
+      "Dual spelling guidance (prescriptive corrections + descriptive variants)",
+      "Malayalam-primary VisuWords semantic graph",
+      "Etymology visualization from PIE to modern Malayalam",
+      "Comprehensive semantic relation networks"
+    ],
+    
+    "use_cases_for_this_prompt": [
+      "Rebuild the Olam 2.0 page from scratch in any framework (React, Vue, Angular, etc.)",
+      "Create a similar dictionary interface for other languages",
+      "Understand the user research and design iteration process",
+      "Extract specific components (search hero, spelling corrections, etc.) for other projects",
+      "Generate design specifications for development team handoff",
+      "Serve as reference for Malayalam typography and cultural considerations in web design",
+      "Document best practices for multi-source content aggregation",
+      "Template for building educational linguistic tools"
+    ],
+    
+    "next_steps": [
+      "Implement backend API for dynamic dictionary data retrieval",
+      "Add JavaScript interactivity (autocomplete, VisuWords navigation, favorite words)",
+      "Integrate with mlmorph Malayalam morphological analyzer API",
+      "Build user authentication for saving preferences and contribution",
+      "Create mobile apps (iOS/Android) with shared design system",
+      "Develop browser extension for instant word lookup",
+      "Add progressive web app (PWA) capabilities for offline access"
+    ]
+  }
+}
