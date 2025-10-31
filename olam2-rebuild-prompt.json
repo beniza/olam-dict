@@ -126,7 +126,7 @@
     "1_header_navigation": {
       "position": "sticky top with backdrop blur",
       "elements": [
-        "Logo/Brand: 'Olam ഓലം' with Malayalam script",
+        "Logo/Brand: 'Olam ഓളം' with Malayalam script",
         "Navigation links: Dictionaries, Tools, About, Contribute",
         "Underline hover animation on nav links"
       ],
@@ -173,7 +173,7 @@
         {
           "component": "Branding elements",
           "elements": [
-            "Floating 'ഓലം' logo in Malayalam",
+            "Floating 'ഓളം' logo in Malayalam",
             "Badges: 'Open Source', 'Community Driven', '180K+ entries'"
           ]
         }
@@ -186,7 +186,7 @@
       "layout": "Two-column grid (copy + visual) with glassmorphism cards",
       "content": {
         "heading": "A living dictionary വാക്കുകളുടെ സമുദ്രം",
-        "subheading": "ഓലം - കേരളത്തിന്റെ സ്വതന്ത്ര സഹകരണ നിഘണ്ടു",
+        "subheading": "ഓളം - കേരളത്തിന്റെ സ്വതന്ത്ര സഹകരണ നിഘണ്ടു",
         "description": "Paragraph explaining open-source Malayalam lexicography mission",
         "visual_stats": [
           "180,000+ entries across 5 sources",
@@ -1041,7 +1041,7 @@
     
     "step_3": "Create CSS file and define all custom properties in :root: colors (indigo #3c5dff, teal #00a7a7, coral #ff7a6b), gradients, shadows, fonts",
     
-    "step_4": "Build sticky header with backdrop-filter blur, logo 'Olam ഓലം', and navigation links (Dictionaries, Tools, About, Contribute) with underline hover animation",
+    "step_4": "Build sticky header with backdrop-filter blur, logo 'Olam ഓളം', and navigation links (Dictionaries, Tools, About, Contribute) with underline hover animation",
     
     "step_5": "Create SEARCH HERO as first main section with: linear-gradient(165deg, indigo→teal) background, large search input container (white, pill-shaped, 1.25-1.5rem font), search button with gradient, mode toggles (Dictionary/Translate/Spell/Audio) as glass-morphic buttons, floating Malayalam logo, badges (Open Source, Community Driven, 180K+ entries)",
     
