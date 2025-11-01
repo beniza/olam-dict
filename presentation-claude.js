@@ -68,15 +68,21 @@ function previousSlide() {
 
 // ===== UI UPDATES =====
 function updateSlideCounter() {
-  const counter = document.getElementById('slide-counter');
-  if (counter) {
-    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+  const currentSlideEl = document.getElementById('current-slide');
+  const totalSlidesEl = document.getElementById('total-slides');
+  
+  if (currentSlideEl) {
+    currentSlideEl.textContent = currentSlide + 1;
+  }
+  
+  if (totalSlidesEl) {
+    totalSlidesEl.textContent = totalSlides;
   }
 }
 
 function updateNavigationButtons() {
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
   
   if (prevBtn) {
     prevBtn.disabled = currentSlide === 0;

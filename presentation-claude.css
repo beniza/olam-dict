@@ -1288,7 +1288,7 @@ blockquote footer {
 }
 
 .phase-duration {
-  background: currentColor;
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -1296,15 +1296,15 @@ blockquote footer {
   font-size: 0.875rem;
 }
 
-.phase-1-block .phase-header-inline { color: #8b5cf6; }
+.phase-1-block .phase-header-inline { color: #7c3aed; }
 .phase-2-block .phase-header-inline { color: var(--primary); }
-.phase-3-block .phase-header-inline { color: var(--secondary); }
-.phase-4-block .phase-header-inline { color: var(--accent); }
+.phase-3-block .phase-header-inline { color: #008787; }
+.phase-4-block .phase-header-inline { color: #e85d48; }
 
 .phase-tasks h4 {
   font-size: 1.125rem;
   margin-bottom: 0.75rem;
-  color: var(--gray-700);
+  color: var(--gray-900);
 }
 
 .phase-tasks ul {
@@ -1317,6 +1317,7 @@ blockquote footer {
   padding: 0.4rem 0;
   padding-left: 1.25rem;
   position: relative;
+  color: var(--gray-800);
 }
 
 .phase-tasks li::before {
@@ -1328,11 +1329,12 @@ blockquote footer {
 }
 
 .milestone {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
   padding: 0.75rem 1rem;
   border-radius: 6px;
   font-weight: 600;
   margin-top: 1rem;
+  color: var(--gray-900);
 }
 
 .roadmap-notes {
