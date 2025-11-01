@@ -493,6 +493,16 @@ blockquote {
   font-style: italic;
 }
 
+blockquote.positive {
+  background: rgba(16, 185, 129, 0.05);
+  border-left-color: #10b981;
+}
+
+blockquote.constructive {
+  background: rgba(245, 158, 11, 0.05);
+  border-left-color: #f59e0b;
+}
+
 blockquote p {
   margin-bottom: 0.75rem;
   color: var(--gray-700);
