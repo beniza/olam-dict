@@ -189,9 +189,9 @@
         "subheading": "ഓളം - കേരളത്തിന്റെ സ്വതന്ത്ര സഹകരണ നിഘണ്ടു",
         "description": "Paragraph explaining open-source Malayalam lexicography mission",
         "visual_stats": [
-          "180,000+ entries across 5 sources",
+          "140,000+ current entries (Olam + Datuk)",
           "Community-verified definitions",
-          "Historical + modern usage"
+          "Path to integrate 5+ historic sources"
         ]
       },
       "styling": {
@@ -643,7 +643,7 @@
       "phases": [
         {
           "phase": "Phase 1 - Foundation (Complete)",
-          "achievements": ["180K entries", "5 source dictionaries", "Basic search"]
+          "achievements": ["140K+ entries", "2 current sources (Olam + Datuk)", "Basic search"]
         },
         {
           "phase": "Phase 2 - Enhancement (In Progress)",
@@ -1043,9 +1043,9 @@
     
     "step_4": "Build sticky header with backdrop-filter blur, logo 'Olam ഓളം', and navigation links (Dictionaries, Tools, About, Contribute) with underline hover animation",
     
-    "step_5": "Create SEARCH HERO as first main section with: linear-gradient(165deg, indigo→teal) background, large search input container (white, pill-shaped, 1.25-1.5rem font), search button with gradient, mode toggles (Dictionary/Translate/Spell/Audio) as glass-morphic buttons, floating Malayalam logo, badges (Open Source, Community Driven, 180K+ entries)",
+    "step_5": "Create SEARCH HERO as first main section with: linear-gradient(165deg, indigo→teal) background, large search input container (white, pill-shaped, 1.25-1.5rem font), search button with gradient, mode toggles (Dictionary/Translate/Spell/Audio) as glass-morphic buttons, floating Malayalam logo, badges (Open Source, Community Driven, 140K+ current entries)",
     
-    "step_6": "Build mission hero section with two-column grid: left column with heading 'A living dictionary വാക്കുകളുടെ സമുദ്രം' and description paragraph; right column with stats cards (180,000+ entries, community-verified, historical+modern). Apply double-layered glassmorphism with ::before and ::after pseudo-elements, radial gradients with indigo/teal accents",
+    "step_6": "Build mission hero section with two-column grid: left column with heading 'A living dictionary വാക്കുകളുടെ സമുദ്രം' and description paragraph; right column with stats cards (140,000+ current entries from Olam + Datuk, community-verified, path to integrate historic sources). Apply double-layered glassmorphism with ::before and ::after pseudo-elements, radial gradients with indigo/teal accents",
     
     "step_7": "Create features grid with 4 mode cards: Dictionary Lookup, Spell Check, Translation, Audio Pronunciation. Each card has title, description, and color-coded tags. Use auto-fit grid minmax(260px, 1fr), white cards with shadows and hover lift effects",
     

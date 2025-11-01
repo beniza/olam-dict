@@ -2,7 +2,7 @@
 
 **A living dictionary for Malayalam** | വാക്കുകളുടെ സമുദ്രം
 
-Open-source, community-driven Malayalam-English dictionary platform with 180,000+ entries from multiple authoritative sources.
+Open-source, community-driven Malayalam-English dictionary platform with 140,000+ entries from crowd-sourced contributions and the Datuk corpus.
 
 ## Project Overview
 
@@ -12,8 +12,8 @@ Olam is reimagining Malayalam lexicography for the digital age, combining tradit
 
 The files in this repository represent **design concepts and mockups** for the future Olam 2.0 platform:
 
-- **Search-first architecture** with prominent, accessible interface
-- **Multi-source aggregation** from 5 dictionaries (Gundert, Sabdatharavali, Bailey, Datuk, WordNet)
+- **Intelligent search architecture** with morphology-aware, fuzzy matching capabilities
+- **Multi-source aggregation** - integrating historic dictionaries (Gundert, Bailey, Sabdatharavali) with existing Olam and Datuk data
 - **Linguistic features**: Etymology, morphological parsing, semantic relations
 - **Educational scaffolding**: Spelling corrections, orthographic variants, usage examples
 - **Modern design**: Glassmorphism aesthetics with responsive, accessible UI
