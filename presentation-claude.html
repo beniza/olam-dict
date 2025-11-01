@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olam 2.0 & 3.0: Reimagining Malayalam Lexicography</title>
+  <link rel="stylesheet" href="presentation-claude.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://smc.org.in/fonts/raghumalayalamsans.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Slide Navigation -->
+  <div class="slide-nav">
+    <button class="nav-btn prev-btn" onclick="previousSlide()">←</button>
+    <span class="slide-counter"><span id="current-slide">1</span> / <span id="total-slides">12</span></span>
+    <button class="nav-btn next-btn" onclick="nextSlide()">→</button>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress"></div>
+  </div>
+
+  <!-- Slides Container -->
+  <div class="slides-container">
+
+    <!-- Slide 1: Title -->
+    <section class="slide active" data-slide="1">
+      <div class="slide-content title-slide">
+        <h1 class="main-title">
+          Reimagining Malayalam Lexicography
+          <span class="malayalam-title">ഓളം 2.0 & 3.0</span>
+        </h1>
+        <p class="subtitle">Exploring Possibilities for the Future of Open Malayalam Dictionaries</p>
+        <div class="title-meta">
+          <p>A Proposal for Stakeholder Consideration</p>
+          <p>November 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2: What is a Dictionary? -->
+    <section class="slide" data-slide="2">
+      <div class="slide-content">
+        <h2>What is a Dictionary?</h2>
+        <p class="slide-intro">More than a collection of words—a multifaceted linguistic resource</p>
+        
+        <div class="functions-grid">
+          <div class="function-card">
+            <div class="function-icon">📖</div>
+            <h3>Normative Function</h3>
+            <p>Custodian of correct usage, spelling, and meaning</p>
+            <cite>Landau (2001) - Dictionaries: The Art and Craft of Lexicography</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🔍</div>
+            <h3>Descriptive Function</h3>
+            <p>Records how words are actually used in language communities</p>
+            <cite>Zgusta (1971) - Manual of Lexicography</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🕸️</div>
+            <h3>Semantic Network</h3>
+            <p>Maps relationships: synonyms, antonyms, hypernyms, collocations</p>
+            <cite>Fellbaum (1998) - WordNet: An Electronic Lexical Database</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🌱</div>
+            <h3>Etymological Function</h3>
+            <p>Traces word origins and historical development</p>
+            <cite>Durkin (2009) - The Oxford Guide to Etymology</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🎭</div>
+            <h3>Cultural Documentation</h3>
+            <p>Preserves cultural concepts and traditional knowledge</p>
+            <cite>Bowker (2020) - Lexicography and language documentation</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🎓</div>
+            <h3>Pedagogical Function</h3>
+            <p>Supports language learning with examples, pronunciation, usage notes</p>
+            <cite>Atkins & Rundell (2008) - Oxford Guide to Practical Lexicography</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🌉</div>
+            <h3>Bilingual Bridge</h3>
+            <p>Facilitates translation and cross-cultural communication</p>
+            <cite>Adamska-Sałaciak (2010) - Examining equivalence</cite>
+          </div>
+
+          <div class="function-card">
+            <div class="function-icon">🤖</div>
+            <h3>Computational Resource</h3>
+            <p>Structured data for NLP, machine translation, text analysis</p>
+            <cite>Navigli & Ponzetto (2012) - BabelNet construction</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Malayalam Lexicography Landscape -->
+    <section class="slide" data-slide="3">
+      <div class="slide-content">
+        <h2>Malayalam Lexicography: Past to Present</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1872</div>
+            <div class="timeline-content">
+              <h3>Hermann Gundert</h3>
+              <p>First comprehensive Malayalam-English Dictionary (32,000+ entries)</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">1930s-50s</div>
+            <div class="timeline-content">
+              <h3>Sabdatharavali & Others</h3>
+              <p>Modern dictionaries by Sreekanteswaram Padmanabha Pillai, Bailey</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2000s</div>
+            <div class="timeline-content">
+              <h3>Digital Era Begins</h3>
+              <p>Malayalam WordNet, digitization efforts by SMC</p>
+            </div>
+          </div>
+
+          <div class="timeline-item highlight">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-content">
+              <h3>Olam 1.0 Launch</h3>
+              <p>First comprehensive online Malayalam dictionary platform</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <h3>Today</h3>
+              <p>180,000+ entries across multiple sources, growing community</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="landscape-analysis">
+          <div class="analysis-box gap">
+            <h4>The Gap</h4>
+            <ul>
+              <li>Fragmented user experience across sources</li>
+              <li>Limited semantic relationship mapping</li>
+              <li>Minimal pedagogical scaffolding</li>
+              <li>No pronunciation guidance</li>
+              <li>Static, non-adaptive interface</li>
+            </ul>
+          </div>
+
+          <div class="analysis-box opportunity">
+            <h4>The Opportunity</h4>
+            <ul>
+              <li>Rich historical data ready to leverage</li>
+              <li>Active open-source community</li>
+              <li>Modern NLP tools for Malayalam</li>
+              <li>Growing demand for language learning</li>
+              <li>Unique position as community-owned resource</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Olam 1.0 Current State -->
+    <section class="slide" data-slide="4">
+      <div class="slide-content">
+        <h2>Olam 1.0: Where We Are Today</h2>
+        
+        <div class="current-state-grid">
+          <div class="state-section strengths">
+            <h3>✅ Strengths</h3>
+            <ul>
+              <li><strong>180,000+ entries</strong> across 5 authoritative sources</li>
+              <li><strong>Open source</strong> and community-driven</li>
+              <li><strong>Multi-dictionary aggregation</strong> (Gundert, STV, Bailey, Datuk, WordNet)</li>
+              <li><strong>Basic search</strong> functionality working</li>
+              <li><strong>Established brand</strong> with user trust</li>
+              <li><strong>Active contributor community</strong></li>
+            </ul>
+          </div>
+
+          <div class="state-section limitations">
+            <h3>⚠️ Limitations</h3>
+            <ul>
+              <li><strong>Interface:</strong> Search buried in navigation, not prominent</li>
+              <li><strong>No morphology parsing:</strong> Searching inflected forms fails</li>
+              <li><strong>Flat presentation:</strong> No etymology, semantic relations visible</li>
+              <li><strong>Missing features:</strong> No pronunciation, spelling guidance, examples</li>
+              <li><strong>Mobile UX:</strong> Not optimized for mobile-first usage</li>
+              <li><strong>No personalization:</strong> One-size-fits-all experience</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="user-feedback">
+          <h3>📢 User Feedback Themes</h3>
+          <div class="feedback-quotes">
+            <blockquote>
+              <p>"I search for വാക്കിന് (inflected) but get no results. Should show me വാക്ക് automatically."</p>
+              <footer>— Language learner, Kochi</footer>
+            </blockquote>
+            <blockquote>
+              <p>"Need to see examples of how words are actually used, not just definitions."</p>
+              <footer>— Translator, Thiruvananthapuram</footer>
+            </blockquote>
+            <blockquote>
+              <p>"Want to know if my spelling is correct. Dictionary should help me learn proper Malayalam."</p>
+              <footer>— Student, Kozhikode</footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="stat-callout">
+          <p class="stat-label">The Bottom Line:</p>
+          <p class="stat-value">Olam has the data, but not yet the experience to be the definitive Malayalam dictionary</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: User Needs in 2025 -->
+    <section class="slide" data-slide="5">
+      <div class="slide-content">
+        <h2>User Needs in 2025</h2>
+        <p class="slide-intro">Different user groups have distinct requirements</p>
+        
+        <div class="user-needs-grid">
+          <div class="user-persona">
+            <div class="persona-header learner">
+              <div class="persona-icon">👨‍🎓</div>
+              <h3>Language Learners</h3>
+            </div>
+            <div class="persona-needs">
+              <h4>They need:</h4>
+              <ul>
+                <li>Simple, clear definitions</li>
+                <li>Pronunciation guidance (audio + IPA)</li>
+                <li>Example sentences in context</li>
+                <li>Spelling corrections (common errors)</li>
+                <li>Progressive difficulty (CEFR levels)</li>
+                <li>Mobile-first experience</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="user-persona">
+            <div class="persona-header researcher">
+              <div class="persona-icon">🔬</div>
+              <h3>Researchers & Linguists</h3>
+            </div>
+            <div class="persona-needs">
+              <h4>They need:</h4>
+              <ul>
+                <li>Etymology and historical development</li>
+                <li>Corpus frequency data</li>
+                <li>Dialect variations</li>
+                <li>Morphological analysis</li>
+                <li>Semantic relations (WordNet)</li>
+                <li>Exportable, citable data (TEI, LIFT)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="user-persona">
+            <div class="persona-header translator">
+              <div class="persona-icon">🌐</div>
+              <h3>Translators & Writers</h3>
+            </div>
+            <div class="persona-needs">
+              <h4>They need:</h4>
+              <ul>
+                <li>Contextual usage examples</li>
+                <li>Register information (formal/informal)</li>
+                <li>Synonyms and alternatives</li>
+                <li>Collocations and idioms</li>
+                <li>Domain-specific terminology</li>
+                <li>Quick lookup (browser extension)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="user-persona">
+            <div class="persona-header developer">
+              <div class="persona-icon">💻</div>
+              <h3>Developers & NLP Engineers</h3>
+            </div>
+            <div class="persona-needs">
+              <h4>They need:</h4>
+              <ul>
+                <li>RESTful API access</li>
+                <li>Structured data (JSON-LD)</li>
+                <li>Bulk download for training</li>
+                <li>Semantic embeddings</li>
+                <li>Real-time updates</li>
+                <li>GraphQL for flexible queries</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <strong>Key Insight:</strong> No single feature satisfies all users. We need a modular, adaptive platform that serves diverse needs while maintaining simplicity.
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Vision - Reimagining Olam -->
+    <section class="slide" data-slide="6">
+      <div class="slide-content">
+        <h2>What Olam Could Become: A Vision</h2>
+        
+        <div class="vision-statement">
+          <h3>The Possibility</h3>
+          <p class="mission-text">Olam could evolve into the <strong>Authentic Malayalam Dictionary</strong> that preserves heritage while embracing innovation—serving learners, scholars, and technologists with equal excellence.</p>
+        </div>
+
+        <div class="vision-pillars">
+          <div class="pillar">
+            <div class="pillar-number">1</div>
+            <h4>Search-First Architecture</h4>
+            <p>Search is THE primary action—make it prominent, fast, and intelligent</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-number">2</div>
+            <h4>Multi-Source Truth</h4>
+            <p>Present all dictionaries with attribution—no single source monopoly</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-number">3</div>
+            <h4>Educational Scaffolding</h4>
+            <p>Help users learn Malayalam structure (morphology, etymology, relations)</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-number">4</div>
+            <h4>Malayalam-First Design</h4>
+            <p>Authentic Malayalam content throughout—not English-centric</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-number">5</div>
+            <h4>Community Ownership</h4>
+            <p>Open source, transparent governance, contributor recognition</p>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-number">6</div>
+            <h4>AI Augmentation</h4>
+            <p>AI amplifies human expertise—doesn't replace lexicographers</p>
+          </div>
+        </div>
+
+        <div class="competitive-edge">
+          <h4>🎯 What Makes Us Unique</h4>
+          <div class="edge-grid">
+            <div class="edge-item">✓ Only community-owned Malayalam dictionary</div>
+            <div class="edge-item">✓ Largest multi-source aggregation (5 dictionaries)</div>
+            <div class="edge-item">✓ Open data + Open source</div>
+            <div class="edge-item">✓ Academic rigor meets modern UX</div>
+            <div class="edge-item">✓ Built for AI era from ground up</div>
+            <div class="edge-item">✓ Preserves heritage, embraces innovation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Two Possible Evolution Phases -->
+    <section class="slide" data-slide="7">
+      <div class="slide-content">
+        <h2>Two Possible Evolution Phases</h2>
+        
+        <div class="evolution-phases">
+          <div class="phase-box phase-2">
+            <div class="phase-header">
+              <h3>Olam 2.0</h3>
+              <span class="phase-timeline">Year 1-2</span>
+            </div>
+            <h4>Foundation: Modern UX + Multi-Source + Linguistic Features</h4>
+            
+            <div class="phase-features">
+              <div class="feature-category">
+                <h5>🎨 User Experience</h5>
+                <ul>
+                  <li>Search-first hero with prominent search bar</li>
+                  <li>Modern glassmorphism design</li>
+                  <li>Mobile-first responsive layout</li>
+                  <li>Color-coded information hierarchy</li>
+                </ul>
+              </div>
+
+              <div class="feature-category">
+                <h5>📚 Dictionary Features</h5>
+                <ul>
+                  <li>Multi-dictionary presentation (5 sources)</li>
+                  <li>Morphological parsing (mlmorph integration)</li>
+                  <li>Etymology visualization (Sanskrit → PIE)</li>
+                  <li>Semantic relations (synonyms, antonyms, hypernyms)</li>
+                </ul>
+              </div>
+
+              <div class="feature-category">
+                <h5>🎓 Educational Tools</h5>
+                <ul>
+                  <li>Spelling corrections (prescriptive)</li>
+                  <li>Similar spellings (descriptive)</li>
+                  <li>Usage examples</li>
+                  <li>VisuWords semantic graph (Malayalam)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phase-outcome">
+              <strong>Potential Outcome:</strong> Transform Olam from basic lookup tool to comprehensive learning platform
+            </div>
+          </div>
+
+          <div class="phase-box phase-3">
+            <div class="phase-header">
+              <h3>Olam 3.0</h3>
+              <span class="phase-timeline">Year 3+</span>
+            </div>
+            <h4>Intelligence: Modular Architecture + AI Capabilities</h4>
+            
+            <div class="phase-concepts">
+              <div class="concept-card">
+                <h5>💎 Concept 1: Dictionary as Modules</h5>
+                <p>Treat each dictionary as pluggable npm-style module</p>
+                <ul>
+                  <li>Users enable/disable dictionaries on demand</li>
+                  <li>Community publishes specialized modules (@olam/medical-terms)</li>
+                  <li>Version control for lexical data</li>
+                  <li>Hot-swappable, offline-capable</li>
+                </ul>
+                <div class="concept-benefit">
+                  <strong>Benefit:</strong> Distributed innovation—anyone can contribute a dictionary module
+                </div>
+              </div>
+
+              <div class="concept-card">
+                <h5>🤖 Concept 2: AI-Era Dictionary</h5>
+                <p>AI transforms dictionary from static reference to intelligent partner</p>
+                <ul>
+                  <li>Contextual definition selection (shows right sense based on context)</li>
+                  <li>Semantic search ("word for someone who never gives up")</li>
+                  <li>Personalized learning paths</li>
+                  <li>Pronunciation coaching with feedback</li>
+                  <li>Conversational interface (ask questions in natural language)</li>
+                  <li>Real-time corpus insights (trending usage)</li>
+                </ul>
+                <div class="concept-benefit">
+                  <strong>Benefit:</strong> Dictionary that learns and adapts to each user
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-outcome">
+              <strong>Outcome:</strong> Olam becomes intelligent language partner, not just lookup tool
+            </div>
+          </div>
+        </div>
+
+        <div class="why-phased">
+          <h4>Why This Phased Approach?</h4>
+          <ul>
+            <li><strong>Risk mitigation:</strong> Validate 2.0 UX before investing in AI infrastructure</li>
+            <li><strong>Data quality:</strong> Clean, structured 2.0 data feeds better AI in 3.0</li>
+            <li><strong>Community buy-in:</strong> Show tangible 2.0 results before ambitious 3.0</li>
+            <li><strong>Resource realism:</strong> 2.0 can be built with existing team; 3.0 needs expanded capacity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Leveraging Existing Assets -->
+    <section class="slide" data-slide="8">
+      <div class="slide-content">
+        <h2>Leveraging Existing Assets</h2>
+        <p class="slide-intro">We have rich resources ready to harness</p>
+        
+        <div class="assets-grid">
+          <div class="asset-card">
+            <h3>📖 Dictionary Sources</h3>
+            <div class="asset-list">
+              <div class="asset-item">
+                <strong>Gundert (1872)</strong>
+                <span>32,000+ entries, Public Domain</span>
+              </div>
+              <div class="asset-item">
+                <strong>Sabdatharavali</strong>
+                <span>Comprehensive modern reference</span>
+              </div>
+              <div class="asset-item">
+                <strong>Bailey, Datuk</strong>
+                <span>Historical perspectives</span>
+              </div>
+              <div class="asset-item">
+                <strong>Malayalam WordNet</strong>
+                <span>Semantic network, 10K+ synsets</span>
+              </div>
+              <div class="asset-item">
+                <strong>Olam Core</strong>
+                <span>Community-verified entries</span>
+              </div>
+            </div>
+            <div class="asset-total">Total: 180,000+ entries</div>
+          </div>
+
+          <div class="asset-card">
+            <h3>🛠️ Tools & Infrastructure</h3>
+            <div class="asset-list">
+              <div class="asset-item">
+                <strong>mlmorph</strong>
+                <span>Malayalam morphological analyzer (SMC)</span>
+              </div>
+              <div class="asset-item">
+                <strong>RaghuMalayalamSans</strong>
+                <span>Open font with proper conjunct support</span>
+              </div>
+              <div class="asset-item">
+                <strong>Existing API</strong>
+                <span>Current Olam 1.0 backend</span>
+              </div>
+              <div class="asset-item">
+                <strong>GitHub Infrastructure</strong>
+                <span>Version control, CI/CD, hosting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <h3>👥 Community</h3>
+            <div class="asset-list">
+              <div class="asset-item">
+                <strong>Active Contributors</strong>
+                <span>Lexicographers, developers, reviewers</span>
+              </div>
+              <div class="asset-item">
+                <strong>SMC Partnership</strong>
+                <span>Swathanthra Malayalam Computing</span>
+              </div>
+              <div class="asset-item">
+                <strong>User Base</strong>
+                <span>Established trust and usage</span>
+              </div>
+              <div class="asset-item">
+                <strong>Academic Network</strong>
+                <span>University connections for research</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="asset-card">
+            <h3>📊 Data Standards</h3>
+            <div class="asset-list">
+              <div class="asset-item">
+                <strong>TEI P5</strong>
+                <span>Text Encoding Initiative for dictionaries</span>
+              </div>
+              <div class="asset-item">
+                <strong>SIL LIFT</strong>
+                <span>Lexicon Interchange Format</span>
+              </div>
+              <div class="asset-item">
+                <strong>Unicode Malayalam</strong>
+                <span>Full Unicode 15.0 support</span>
+              </div>
+              <div class="asset-item">
+                <strong>WordNet Format</strong>
+                <span>Synset and semantic relation schemas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="leverage-strategy">
+          <h4>🎯 Quick Wins (Low-Hanging Fruit)</h4>
+          <div class="quick-wins">
+            <div class="win-item">✓ Redesign UI with search-first mockups (already designed)</div>
+            <div class="win-item">✓ Integrate mlmorph for inflection handling</div>
+            <div class="win-item">✓ Consolidate 5 dictionary sources in unified presentation</div>
+            <div class="win-item">✓ Add RaghuMalayalamSans for better typography</div>
+            <div class="win-item">✓ Export existing data to TEI/LIFT standards</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Building New Capabilities -->
+    <section class="slide" data-slide="9">
+      <div class="slide-content">
+        <h2>Building New Capabilities</h2>
+        <p class="slide-intro">Beyond existing assets—what we need to build</p>
+        
+        <div class="new-capabilities">
+          <div class="capability-section">
+            <h3>🤖 AI/ML Models</h3>
+            <div class="capability-items">
+              <div class="capability-item">
+                <h4>Malayalam BERT</h4>
+                <p>For semantic search and contextual understanding</p>
+                <ul>
+                  <li>Train on Malayalam Wikipedia + corpus</li>
+                  <li>Fine-tune for lexicographic tasks</li>
+                  <li>Enable "search by meaning" capability</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>GPT Fine-tuning</h4>
+                <p>For example generation and explanations</p>
+                <ul>
+                  <li>Fine-tune on Malayalam literature</li>
+                  <li>Generate usage examples automatically</li>
+                  <li>Provide conversational answers</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Speech Models</h4>
+                <p>For pronunciation coaching</p>
+                <ul>
+                  <li>Malayalam ASR (speech recognition)</li>
+                  <li>TTS (text-to-speech)</li>
+                  <li>Pronunciation assessment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="capability-section">
+            <h3>📊 New Data Collection</h3>
+            <div class="capability-items">
+              <div class="capability-item">
+                <h4>Audio Pronunciations</h4>
+                <ul>
+                  <li>Record 10,000+ high-frequency words</li>
+                  <li>Multiple speakers (dialect diversity)</li>
+                  <li>IPA transcriptions for each entry</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Usage Examples</h4>
+                <ul>
+                  <li>Extract from Malayalam Wikipedia</li>
+                  <li>Crowdsource from community</li>
+                  <li>Validate and rate examples</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Corpus Analysis</h4>
+                <ul>
+                  <li>Frequency data from modern texts</li>
+                  <li>Collocation patterns</li>
+                  <li>Trend tracking (new words, meanings)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="capability-section">
+            <h3>🔧 Technical Infrastructure</h3>
+            <div class="capability-items">
+              <div class="capability-item">
+                <h4>API Development</h4>
+                <ul>
+                  <li>RESTful API for dictionary queries</li>
+                  <li>GraphQL for flexible data access</li>
+                  <li>WebSocket for real-time features</li>
+                  <li>Rate limiting and authentication</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Vector Database</h4>
+                <ul>
+                  <li>Pinecone/Weaviate for semantic search</li>
+                  <li>Store word embeddings</li>
+                  <li>Enable similarity queries</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Mobile Apps</h4>
+                <ul>
+                  <li>iOS and Android native apps</li>
+                  <li>Offline-first architecture</li>
+                  <li>Voice input/output</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="capability-section">
+            <h3>🌐 User Features</h3>
+            <div class="capability-items">
+              <div class="capability-item">
+                <h4>Browser Extension</h4>
+                <ul>
+                  <li>Hover-to-define on any webpage</li>
+                  <li>Instant translations</li>
+                  <li>Save words to personal lists</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Learning Platform</h4>
+                <ul>
+                  <li>Spaced repetition system</li>
+                  <li>Progress tracking</li>
+                  <li>CEFR level assessment</li>
+                </ul>
+              </div>
+              <div class="capability-item">
+                <h4>Community Tools</h4>
+                <ul>
+                  <li>Contribution workflow</li>
+                  <li>Peer review system</li>
+                  <li>Discussion forums</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="investment-callout">
+          <strong>Note:</strong> These capabilities require significant investment but position Olam as world-class Malayalam language resource
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10: Mockup Demo -->
+    <section class="slide" data-slide="10">
+      <div class="slide-content">
+        <h2>Olam 2.0 Mockup: A Visual Tour</h2>
+        <p class="slide-intro">See the reimagined experience in action</p>
+        
+        <div class="mockup-showcase">
+          <div class="mockup-feature">
+            <div class="mockup-number">1</div>
+            <h3>Search-First Hero</h3>
+            <div class="mockup-image-placeholder">
+              <div class="mockup-preview">
+                <div class="preview-gradient"></div>
+                <div class="preview-search-bar">
+                  <span class="search-icon">🔍</span>
+                  <span class="search-text">വാക്ക് തിരയുക...</span>
+                </div>
+                <div class="preview-logo">ഓളം</div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Large, prominent search at top—gradient background draws attention immediately</p>
+          </div>
+
+          <div class="mockup-feature">
+            <div class="mockup-number">2</div>
+            <h3>Multi-Dictionary View</h3>
+            <div class="mockup-image-placeholder">
+              <div class="mockup-cards">
+                <div class="card-preview">Gundert<br/><small>3 senses</small></div>
+                <div class="card-preview">STV<br/><small>2 senses</small></div>
+                <div class="card-preview">WordNet<br/><small>synset</small></div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Each dictionary gets its own card with independent numbering—no merged confusion</p>
+          </div>
+
+          <div class="mockup-feature">
+            <div class="mockup-number">3</div>
+            <h3>Morphology Alert</h3>
+            <div class="mockup-image-placeholder">
+              <div class="alert-preview">
+                <span class="alert-icon">⚠️</span>
+                <div class="alert-text">
+                  <strong>Inflected form detected</strong><br/>
+                  <small>വാക്കിന് → വാക്ക് (dative case)</small>
+                </div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Educational notification explains inflection—powered by mlmorph</p>
+          </div>
+
+          <div class="mockup-feature">
+            <div class="mockup-number">4</div>
+            <h3>Etymology Visualization</h3>
+            <div class="mockup-image-placeholder">
+              <div class="etymology-preview">
+                <div class="etym-step">വാക്ക്<br/><small>Modern ML</small></div>
+                <div class="etym-arrow">→</div>
+                <div class="etym-step">वाच्<br/><small>Sanskrit</small></div>
+                <div class="etym-arrow">→</div>
+                <div class="etym-step">*wekʷ-<br/><small>PIE</small></div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Visual journey from Proto-Indo-European to modern Malayalam</p>
+          </div>
+
+          <div class="mockup-feature">
+            <div class="mockup-number">5</div>
+            <h3>Spelling Corrections</h3>
+            <div class="mockup-image-placeholder">
+              <div class="spelling-preview">
+                <div class="correct-spelling">✓ വാക്ക്</div>
+                <div class="incorrect-spelling">✗ വാക്കു് <small>(extra vowel sign)</small></div>
+                <div class="incorrect-spelling">✗ വാക്കു <small>(wrong vowel)</small></div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Prescriptive guidance—green for correct, red for errors with explanations</p>
+          </div>
+
+          <div class="mockup-feature">
+            <div class="mockup-number">6</div>
+            <h3>Semantic Relations</h3>
+            <div class="mockup-image-placeholder">
+              <div class="relations-preview">
+                <div class="relation-group">
+                  <strong>Synonyms:</strong>
+                  <span class="relation-tag">പദം</span>
+                  <span class="relation-tag">ശബ്ദം</span>
+                  <span class="relation-tag">വചനം</span>
+                </div>
+                <div class="relation-group">
+                  <strong>Antonyms:</strong>
+                  <span class="relation-tag">മൗനം</span>
+                </div>
+              </div>
+            </div>
+            <p><strong>Key Feature:</strong> Clickable word network—all in Malayalam, color-coded by type</p>
+          </div>
+        </div>
+
+        <div class="mockup-cta">
+          <p><strong>See full mockup:</strong> <code>presentation/olam2-claude.html</code></p>
+          <p>Interactive prototype demonstrates all features in working browser environment</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 11: Roadmap & Timeline -->
+    <section class="slide" data-slide="11">
+      <div class="slide-content">
+        <h2>Roadmap & Timeline</h2>
+        
+        <div class="roadmap">
+          <div class="phase-timeline">
+            <div class="phase-block phase-1-block">
+              <div class="phase-header-inline">
+                <h3>Phase 1: Foundation</h3>
+                <span class="phase-duration">Months 1-6</span>
+              </div>
+              <div class="phase-tasks">
+                <h4>Design & Data</h4>
+                <ul>
+                  <li>Finalize Olam 2.0 UI/UX design</li>
+                  <li>Consolidate 5 dictionary sources</li>
+                  <li>Clean and standardize data (TEI/LIFT)</li>
+                  <li>Set up development infrastructure</li>
+                  <li>Recruit core team (if needed)</li>
+                </ul>
+                <div class="milestone">🎯 Milestone: Design approved, data ready</div>
+              </div>
+            </div>
+
+            <div class="phase-block phase-2-block">
+              <div class="phase-header-inline">
+                <h3>Phase 2: Olam 2.0 Development</h3>
+                <span class="phase-duration">Months 7-12</span>
+              </div>
+              <div class="phase-tasks">
+                <h4>Build Core Features</h4>
+                <ul>
+                  <li>Frontend development (React/Vue)</li>
+                  <li>Integrate mlmorph for morphology</li>
+                  <li>Multi-dictionary presentation</li>
+                  <li>Etymology & semantic relations</li>
+                  <li>Spelling corrections system</li>
+                  <li>Mobile-responsive design</li>
+                  <li>Beta testing with community</li>
+                </ul>
+                <div class="milestone">🎯 Milestone: Olam 2.0 public launch</div>
+              </div>
+            </div>
+
+            <div class="phase-block phase-3-block">
+              <div class="phase-header-inline">
+                <h3>Phase 3: Enhancement & Audio</h3>
+                <span class="phase-duration">Year 2, Q1-Q2</span>
+              </div>
+              <div class="phase-tasks">
+                <h4>Add Rich Media</h4>
+                <ul>
+                  <li>Record 10,000+ pronunciation audio</li>
+                  <li>IPA transcription for entries</li>
+                  <li>Usage example collection</li>
+                  <li>Browser extension development</li>
+                  <li>API documentation & access</li>
+                  <li>Mobile app (iOS/Android)</li>
+                </ul>
+                <div class="milestone">🎯 Milestone: Complete multimedia dictionary</div>
+              </div>
+            </div>
+
+            <div class="phase-block phase-4-block">
+              <div class="phase-header-inline">
+                <h3>Phase 4: AI & Modules</h3>
+                <span class="phase-duration">Year 2, Q3 - Year 3</span>
+              </div>
+              <div class="phase-tasks">
+                <h4>Olam 3.0 Intelligence</h4>
+                <ul>
+                  <li>Train Malayalam BERT model</li>
+                  <li>Implement semantic search</li>
+                  <li>Modular architecture for dictionaries</li>
+                  <li>Conversational AI interface</li>
+                  <li>Personalized learning paths</li>
+                  <li>Community module registry</li>
+                </ul>
+                <div class="milestone">🎯 Milestone: Olam 3.0 intelligent platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-notes">
+          <h4>Key Dependencies & Assumptions</h4>
+          <ul>
+            <li><strong>Team:</strong> 2-3 full-time developers, 1 UX designer, 1 lexicographer, community volunteers</li>
+            <li><strong>Budget:</strong> Phase 1-2 (~$100-150K), Phase 3-4 (~$200-300K) for AI infrastructure</li>
+            <li><strong>Partnerships:</strong> Academic institutions for research, SMC for tools, cloud credits for hosting</li>
+            <li><strong>Risk:</strong> AI timeline depends on model availability and training resources</li>
+          </ul>
+        </div>
+
+        <div class="success-metrics-preview">
+          <h4>Success Metrics (by end of Year 2)</h4>
+          <div class="metrics-grid">
+            <div class="metric">📊 50K+ monthly active users</div>
+            <div class="metric">📖 200K+ total entries</div>
+            <div class="metric">🎧 10K+ pronunciation audio</div>
+            <div class="metric">⭐ 4.5+ user satisfaction rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12: Team & Governance -->
+    <section class="slide" data-slide="12">
+      <div class="slide-content">
+        <h2>Team & Governance</h2>
+        
+        <div class="org-structure">
+          <h3>Organizational Structure</h3>
+          <div class="org-chart">
+            <div class="org-level">
+              <div class="org-box stakeholders">
+                <h4>Stakeholder Board</h4>
+                <p>Strategic direction, funding decisions</p>
+              </div>
+            </div>
+            
+            <div class="org-level">
+              <div class="org-box project-lead">
+                <h4>Project Lead</h4>
+                <p>Overall coordination, roadmap execution</p>
+              </div>
+            </div>
+            
+            <div class="org-level">
+              <div class="org-box team">
+                <h4>Product & Design</h4>
+                <ul>
+                  <li>UX Designer</li>
+                  <li>Product Manager</li>
+                </ul>
+              </div>
+              <div class="org-box team">
+                <h4>Engineering</h4>
+                <ul>
+                  <li>Frontend (2)</li>
+                  <li>Backend (1)</li>
+                  <li>DevOps (0.5)</li>
+                </ul>
+              </div>
+              <div class="org-box team">
+                <h4>Lexicography</h4>
+                <ul>
+                  <li>Lead Lexicographer</li>
+                  <li>Data Curator</li>
+                  <li>Community Coord.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="org-level">
+              <div class="org-box advisory">
+                <h4>Advisory Board</h4>
+                <p>Academic linguists, Malayalam scholars, tech experts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="roles-responsibilities">
+          <h3>Key Roles & Responsibilities</h3>
+          <div class="roles-grid">
+            <div class="role-card">
+              <h4>💼 Product Lead</h4>
+              <ul>
+                <li>Define feature roadmap</li>
+                <li>Prioritize user needs</li>
+                <li>Coordinate across teams</li>
+                <li>Report to stakeholders</li>
+              </ul>
+            </div>
+
+            <div class="role-card">
+              <h4>👨‍💻 Engineering Team</h4>
+              <ul>
+                <li>Build Olam 2.0/3.0 platform</li>
+                <li>Maintain API and infrastructure</li>
+                <li>Integrate AI/ML models</li>
+                <li>Performance optimization</li>
+              </ul>
+            </div>
+
+            <div class="role-card">
+              <h4>📖 Lexicography Team</h4>
+              <ul>
+                <li>Curate dictionary content</li>
+                <li>Review community contributions</li>
+                <li>Ensure academic rigor</li>
+                <li>Etymology research</li>
+              </ul>
+            </div>
+
+            <div class="role-card">
+              <h4>🎨 Design Team</h4>
+              <ul>
+                <li>Create user interfaces</li>
+                <li>User research and testing</li>
+                <li>Accessibility compliance</li>
+                <li>Design system maintenance</li>
+              </ul>
+            </div>
+
+            <div class="role-card">
+              <h4>👥 Community Manager</h4>
+              <ul>
+                <li>Engage contributors</li>
+                <li>Moderate forums</li>
+                <li>Organize events</li>
+                <li>Recognition programs</li>
+              </ul>
+            </div>
+
+            <div class="role-card">
+              <h4>🎓 Advisory Board</h4>
+              <ul>
+                <li>Review major decisions</li>
+                <li>Academic partnerships</li>
+                <li>Quality assurance</li>
+                <li>Research guidance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="resource-requirements">
+          <h3>Resource Requirements</h3>
+          <div class="resources-table">
+            <div class="resource-row">
+              <div class="resource-category">Personnel (Year 1)</div>
+              <div class="resource-detail">
+                <ul>
+                  <li>2 Full-time developers</li>
+                  <li>1 UX Designer (contract/part-time)</li>
+                  <li>1 Lexicographer (part-time)</li>
+                  <li>Community volunteers (10-20 active)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="resource-row">
+              <div class="resource-category">Budget (Year 1)</div>
+              <div class="resource-detail">
+                <ul>
+                  <li>Salaries: $80-100K</li>
+                  <li>Infrastructure: $20K (cloud, tools)</li>
+                  <li>Design/Contract: $15K</li>
+                  <li>Contingency: $10K</li>
+                  <li><strong>Total: ~$125-145K</strong></li>
+                </ul>
+              </div>
+            </div>
+            <div class="resource-row">
+              <div class="resource-category">Infrastructure</div>
+              <div class="resource-detail">
+                <ul>
+                  <li>Cloud hosting (AWS/GCP credits)</li>
+                  <li>GitHub org (open source)</li>
+                  <li>Communication tools (Slack/Discord)</li>
+                  <li>Design tools (Figma)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="governance-model">
+          <h3>Governance Model</h3>
+          <p><strong>Proposed:</strong> Establish Olam Foundation as non-profit organization</p>
+          <ul>
+            <li><strong>Ownership:</strong> Community-owned, no single stakeholder control</li>
+            <li><strong>Decision-making:</strong> Stakeholder board for strategic, core team for operational</li>
+            <li><strong>Transparency:</strong> Public roadmap, open source code, financial reports</li>
+            <li><strong>Sustainability:</strong> Mix of grants, donations, premium API access (fair use free)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 13: Path Forward -->
+    <section class="slide" data-slide="13">
+      <div class="slide-content">
+        <h2>Key Questions for Stakeholders</h2>
+        
+        <div class="decisions-needed">
+          <h3>🎯 For Stakeholder Discussion and Decision</h3>
+          
+          <div class="decision-box priority-1">
+            <div class="decision-header">
+              <span class="priority-badge">Question 1</span>
+              <h4>Vision Alignment</h4>
+            </div>
+            <p><strong>Question:</strong> Do these concepts align with what Olam should become?</p>
+            <div class="decision-options">
+              <div class="option">Does the UX direction feel right?</div>
+              <div class="option">Are the features valuable to Malayalam users?</div>
+              <div class="option">Does this honor Olam's open-source mission?</div>
+            </div>
+          </div>
+
+          <div class="decision-box priority-1">
+            <div class="decision-header">
+              <span class="priority-badge">Question 2</span>
+              <h4>Feasibility & Priority</h4>
+            </div>
+            <p><strong>Question:</strong> Is this the right project at the right time?</p>
+            <div class="decision-options">
+              <div class="option">Is there appetite to pursue this vision?</div>
+              <div class="option">What scale makes sense? (Full rebuild vs incremental?)</div>
+              <div class="option">Are there other priorities for Olam resources?</div>
+            </div>
+          </div>
+
+          <div class="decision-box priority-2">
+            <div class="decision-header">
+              <span class="priority-badge">Question 3</span>
+              <h4>Resources & Support</h4>
+            </div>
+            <p><strong>Question:</strong> What resources could be available if we move forward?</p>
+            <div class="decision-options">
+              <div class="option">Funding: Grants? Sponsorships? Volunteer-only?</div>
+              <div class="option">People: Who could lead? Who could contribute?</div>
+              <div class="option">Partnerships: Which institutions might support this?</div>
+            </div>
+          </div>
+
+          <div class="decision-box priority-2">
+            <div class="decision-header">
+              <span class="priority-badge">Question 4</span>
+              <h4>Governance & Ownership</h4>
+            </div>
+            <p><strong>Question:</strong> How should decisions be made if this proceeds?</p>
+            <div class="decision-options">
+              <div class="option">Who represents stakeholders?</div>
+              <div class="option">How do we preserve community input?</div>
+              <div class="option">What's the decision-making process?</div>
+            </div>
+          </div>
+
+          <div class="decision-box priority-3">
+            <div class="decision-header">
+              <span class="priority-badge">Question 5</span>
+              <h4>Long-term Direction</h4>
+            </div>
+            <p><strong>Question:</strong> Does the Olam 3.0 vision (modular + AI) make sense as an aspiration?</p>
+            <div class="decision-options">
+              <div class="option">Is it worth planning for future AI integration?</div>
+              <div class="option">Or should we focus only on near-term improvements?</div>
+              <div class="option">What timeline feels appropriate?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-steps">
+          <h3>📅 What Happens Next?</h3>
+          <div class="next-steps-timeline">
+            <div class="step-item"><strong>Today:</strong> Discussion and gather stakeholder perspectives</div>
+            <div class="step-item"><strong>Next:</strong> Stakeholders decide whether to pursue this vision</div>
+            <div class="step-item"><strong>If Yes:</strong> Stakeholders determine scale, resources, and governance</div>
+            <div class="step-item"><strong>Then:</strong> Detailed planning based on stakeholder decisions</div>
+            <div class="step-item"><strong>Only if committed:</strong> Implementation begins</div>
+          </div>
+        </div>
+
+        <div class="risks-mitigation">
+          <h3>Potential Challenges to Consider</h3>
+          <div class="risks-grid">
+            <div class="risk-item">
+              <h4>⚠️ Scope & Ambition</h4>
+              <p>Vision is comprehensive - would need careful phasing and realistic scoping if pursued</p>
+            </div>
+            <div class="risk-item">
+              <h4>⚠️ Community Buy-in</h4>
+              <p>Success depends on maintaining Olam's community values throughout any development</p>
+            </div>
+            <div class="risk-item">
+              <h4>⚠️ Resource Availability</h4>
+              <p>Requires significant investment - must assess whether resources can be secured</p>
+            </div>
+            <div class="risk-item">
+              <h4>⚠️ Maintenance Burden</h4>
+              <p>More features = more long-term maintenance - sustainability must be considered</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 14: Discussion -->
+    <section class="slide" data-slide="14">
+      <div class="slide-content discussion-slide">
+        <h2>Open Discussion</h2>
+        
+        <div class="discussion-topics">
+          <div class="topic-section">
+            <h3>💬 Questions for Discussion</h3>
+            <ul class="discussion-list">
+              <li>Does this vision resonate with Olam's mission and values?</li>
+              <li>What excites you? What concerns you?</li>
+              <li>Is this the right direction for Olam?</li>
+              <li>If pursued, what scale makes sense?</li>
+              <li>What else should we be considering?</li>
+            </ul>
+          </div>
+
+          <div class="topic-section">
+            <h3>🎯 We Value Your Perspective On...</h3>
+            <div class="feedback-areas">
+              <div class="feedback-area">
+                <h4>Vision & Direction</h4>
+                <p>Does this feel like the right future for Olam? What would you adjust?</p>
+              </div>
+              <div class="feedback-area">
+                <h4>Priorities & Scale</h4>
+                <p>If we move forward, where should we focus? What's realistic?</p>
+              </div>
+              <div class="feedback-area">
+                <h4>Feasibility</h4>
+                <p>What resources exist? What partnerships make sense?</p>
+              </div>
+              <div class="feedback-area">
+                <h4>Concerns</h4>
+                <p>What gives you pause? What needs more thought?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-section">
+            <h3>📝 Parking Lot (for follow-up)</h3>
+            <ul class="parking-lot">
+              <li>Technical architecture deep-dive</li>
+              <li>Detailed budget breakdown by phase</li>
+              <li>Legal structure and IP considerations</li>
+              <li>Comparative analysis with other dictionaries</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="closing-statement">
+          <h3>Your Decision Will Shape the Future</h3>
+          <p class="closing-text">
+            Olam has served the Malayalam community for over a decade. This proposal explores what it could become—
+            a world-class linguistic resource that honors our language's richness and complexity while remaining 
+            open, accessible, and community-driven.
+          </p>
+          <p class="closing-text">
+            <strong>The decision of whether and how to pursue this vision belongs to the stakeholder community.</strong>
+          </p>
+                <p>Do the mockups address real user needs? What's missing from the design?</p>
+              </div>
+              <div class="feedback-area">
+                <h4>Resources & Timeline</h4>
+                <p>Is the budget realistic? Is the 2-year timeline achievable?</p>
+              </div>
+              <div class="feedback-area">
+                <h4>Governance</h4>
+                <p>How should Olam be structured? Who should have decision-making authority?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="topic-section">
+            <h3>📊 Parking Lot (Deferred Topics)</h3>
+            <ul class="parking-lot">
+              <li>Detailed technical architecture (available in docs)</li>
+              <li>Specific AI model selection (Phase 3-4 decision)</li>
+              <li>Revenue models and pricing (if applicable)</li>
+              <li>International expansion beyond Malayalam</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="closing-statement">
+          <h3>Your Decision Will Shape the Future</h3>
+          <p class="closing-text">
+            Olam has served the Malayalam community for over a decade. This proposal explores what it could become—
+            a world-class linguistic resource that honors our language's richness and complexity while remaining 
+            open, accessible, and community-driven.
+          </p>
+          <p class="closing-text">
+            <strong>The decision of whether and how to pursue this vision belongs to the stakeholder community.</strong>
+          </p>
+          
+          <div class="contact-info">
+            <h4>Resources & Contact</h4>
+            <p>📄 Full documentation: <code>olam2-rebuild-prompt.json</code></p>
+            <p>🎨 Interactive mockup: <code>olam2-claude.html</code></p>
+            <p>💻 GitHub: <code>github.com/beniza/olam-dict</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="presentation-claude.js"></script>
+</body>
+</html>
